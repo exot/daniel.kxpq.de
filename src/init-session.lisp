@@ -6,7 +6,13 @@
 (defun init-user-session (root)
   (setf (widget-children root)
         (make-navigation "Main Menu"
-                         (list "first" (make-users-gridedit))
+                         (list "first" (make-instance
+                                        'widget
+                                        :children
+                                        (list
+                                         (make-instance 'flash
+                                                        :messages (list "Welcome!"))
+                                         (make-users-gridedit))))
                          (list "other" (make-users-gridedit))
                          (list "google" (f_% (redirect "http://www.google.de"))))))
 
