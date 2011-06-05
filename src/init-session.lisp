@@ -5,7 +5,10 @@
 
 (defun init-user-session (root)
   (setf (widget-children root)
-	(make-users-gridedit)))
+        (make-navigation "Main Menu"
+                         (list "first" (make-users-gridedit))
+                         (list "other" (make-users-gridedit))
+                         (list "google" (f_% (redirect "http://www.google.de"))))))
 
 (defclass user ()
   ((id)
