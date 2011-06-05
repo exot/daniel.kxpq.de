@@ -26,8 +26,7 @@
 ;; Top level start & stop scripts
 
 (defun start-website (&rest args)
-  "Starts the application by calling 'start-weblocks' with appropriate
-arguments."
+  "Starts the application by calling 'start-weblocks' with appropriate arguments."
   (apply #'start-weblocks args)
   (start-webapp 'website))
 

@@ -15,9 +15,15 @@
   :depends-on (:weblocks)
   :components ((:file "website")
                (:module conf
-                        :components ((:file "stores"))
-                        :depends-on ("website"))
+                :components ((:file "stores"))
+                :depends-on ("website"))
                (:module src
-                        :components ((:file "init-session"))
-                        :depends-on ("website" conf))))
+                :components ((:file "init-session"
+                              :depends-on (models views))
+                             (:module models
+                              :components ((:file "user")))
+                             (:module views
+                              :components ((:file "user"))
+                              :depends-on (models)))
+                :depends-on (conf "website"))))
 
