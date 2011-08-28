@@ -1,4 +1,3 @@
-
 body
 {
   font-size: small;
@@ -7,7 +6,7 @@ body
 
 a
 {
-  color: #A61E2E;
+    color: #A61E2E;
 }
 
 .view
@@ -19,7 +18,7 @@ a
 
 .view h1, .view fieldset h1
 {
-  background-color: #ecf8d7;
+    background-color: #ecf8d7;
 }
 
 .view .extra-top-1
@@ -34,7 +33,7 @@ a
   height: 7px;
   margin-top: -7px;
 /*  background: url(/weblocks-common/pub/images/widget/top_right.png) no-repeat top right;*/
-  border-bottom: 1px solid #dbeac1;
+/*  border-bottom: 1px solid #dbeac1; */
   overflow: hidden;
 }
 
@@ -53,7 +52,7 @@ a
 .long-form fieldset .validation-errors-summary h2.error-count,
 .form fieldset .validation-errors-summary .non-field-validation-errors
 {
-  border-top: 1px solid #fcfef6;
+    /* border-top: 1px solid #fcfef6; */
 }
 
 .view h1, .view fieldset h1, .table table caption, div.empty p,
@@ -63,7 +62,7 @@ a
 .long-form fieldset .validation-errors-summary,
 .form fieldset .validation-errors-summary .non-field-validation-errors
 {
-  border-bottom: 1px solid #dbeac1;
+    /* border-bottom: 1px solid #dbeac1; */
 }
 
 .view h1, .view fieldset h1, .table table caption, div.empty p,
@@ -71,7 +70,7 @@ a
 .view fieldset div.submit, .view div.submit,
 .long-form fieldset .validation-errors-summary h2.error-count
 {
-  background:#ecf8d7;
+    /* background:#ecf8d7; */
 }
 
 h1, h2

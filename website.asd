@@ -12,7 +12,7 @@
   :author "Daniel"
   :licence "None"
   :description "website"
-  :depends-on (:weblocks)
+  :depends-on (:weblocks :cl-prevalence)
   :components ((:file "website")
                (:module conf
                 :components ((:file "stores"))

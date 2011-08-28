@@ -1,10 +1,16 @@
 
 (defpackage #:website
-  (:use :cl :weblocks
-        :f-underscore :anaphora)
-  (:import-from :hunchentoot #:header-in
-		#:set-cookie #:set-cookie* #:cookie-in
-		#:user-agent #:referer)
+  (:use :cl
+        :weblocks
+        :f-underscore
+        :anaphora)
+  (:import-from :hunchentoot
+                #:header-in
+		#:set-cookie
+                #:set-cookie*
+                #:cookie-in
+		#:user-agent
+                #:referer)
   (:documentation
    "A web application based on Weblocks."))
 
@@ -16,10 +22,11 @@
 
 (defwebapp website
     :prefix "/"
-    :description "website: A new application"
+    :name "Daniels Playground"
     :init-user-session 'website::init-user-session
-    :autostart nil                   ;; have to start the app manually
-    :ignore-default-dependencies nil ;; accept the defaults
+    :ignore-default-dependencies nil
+    :public-files-path #P"/home/borch/Documents/lang/lisp/cl/source/website/pub/"
+    :autostart nil
     :debug t
     )
 

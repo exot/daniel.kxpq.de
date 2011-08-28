@@ -2,12 +2,12 @@ body
 {
 /*  background: url(/weblocks-common/pub/images/page/background.png);*/
   text-align: center;
-  background: #001D23;
+/*  background: #001D23; */
 }
 
 div.page-wrapper
 {
-  max-width: 90%;
+/*  max-width: 90%;*/
   min-width: 60em;
 
   margin: 0 auto;
@@ -50,8 +50,8 @@ div.page-wrapper
 
 div#root, .dialog-body, .dialog h1
 {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+/*  border-left: 1px solid black; */
+/*  border-right: 1px solid black; */
 }
 
 div#root
