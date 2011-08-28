@@ -21,9 +21,11 @@
                 :components ((:file "init-session"
                               :depends-on (models views))
                              (:module models
-                              :components ((:file "user")))
+                              :components ((:file "user")
+                                           (:file "poem")))
                              (:module views
-                              :components ((:file "user"))
+                              :components ((:file "user")
+                                           (:file "poem"))
                               :depends-on (models)))
                 :depends-on (conf "website"))))
 
