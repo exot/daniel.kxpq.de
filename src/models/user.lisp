@@ -9,4 +9,7 @@
          :type string)
    (info :accessor user-info
          :initarg :info
-         :type string)))
+         :type string)
+   (password-hash :accessor user-password-hash
+                  :initarg :password-hash
+                  :type string)))
