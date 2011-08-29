@@ -26,14 +26,15 @@
         " ("
         (str (concatenate 'string
                           (lisp-implementation-type) " "
-                          (lisp-implementation-version))) ")")
+                          (lisp-implementation-version)))
+        ")")
       (:a :href "http://www.lisp.org"
           (:img :src (make-webapp-public-file-uri "images/footer/lambda-lisp.png")
                 :alt "This page is made with Common Lisp."))
       (str "&nbsp;")
       (:a :href "http://www.catb.org/hacker-emblem/"
           (:img :src (make-webapp-public-file-uri "images/footer/hacker.png")
-                :alt "Thou Hacking shall be beautiful.")))))
+                :alt "Thou hacking shall be beautiful.")))))
 
 ;;;
 

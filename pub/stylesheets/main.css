@@ -9,6 +9,11 @@ a
     color: #A61E2E;
 }
 
+img
+{
+    border-width:0px;
+}
+
 .view
 {
 /*  background: #ecf8d7 url(/weblocks-common/pub/images/widget/top_background.png) repeat-x;*/
