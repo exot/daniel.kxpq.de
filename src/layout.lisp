@@ -6,15 +6,27 @@
 (defun make-home-page ()
   (make-instance 'static-selector
                  :panes (list
-                         (cons "home"
+                         (cons "main"
                                (f_% (with-html
                                       (:h2 "At Home")
                                       (:p "This is " (:a :href (make-webapp-uri "/home/personal")
                                                          "Daniel's")
-                                          " homepage, made with Weblocks!"))))
+                                          " homepage, made with Weblocks!  There is not much here
+                                          right now, though."))))
                          (cons "personal"
                                (f_% (with-html
                                       (:h2 "Daniel Borchmann")
+                                      (:p "I'm a PhD math student at the "
+                                          (:a :href "http://www.math.tu-dresden.de"
+                                              "Technische Universität Dresden")
+                                          " under supervision of "
+                                          (:a :href "http://tu-dresden.de/Members/bernhard.ganter"
+                                              "Prof. Bernhard Ganter")
+                                          ".  The main focus of my work lies on "
+                                          (:a :href (make-webapp-uri "/math/fca/")
+                                              "Formal Concept Analysis")
+                                          " with special treatment of Association Rules in a
+                                          Description Logic setting.")
                                       (:h3 "Personal Quirks")
                                       (:p "To come (oh, well, they are already there, of course, but you understand...)")
                                       (:h3 "Public Keys")
@@ -35,14 +47,19 @@
 
 (defun make-math-page ()
   (make-instance 'static-selector
-                 :panes `(("calculus" . ,(f_% (with-html
-                                                (:h2 "Calculus")
-                                                (:a :href (make-webapp-uri "/math/algebra/")
-                                                    "Algebra"))))
-                          ("algebra"  . ,(f_% (with-html
-                                                (:h2 "Algebra")
-                                                (:a :href (make-webapp-uri "/math/calculus/")
-                                                    "Calculus")))))))
+                 :panes (list
+                         (cons "main"
+                               (f_% (with-html
+                                      (:h2 "On Math")
+                                      (:div :style "text-align:center"
+                                            (:img :src (make-webapp-public-file-uri "/images/math/ramanujan.png"))))))
+                         (cons "algebra"
+                               (f_% (with-html
+                                      (:h2 "Algebra"))))
+                         (cons "fca"
+                               (f_% (with-html
+                                      (:h2 "Formal Concept Analysis")
+                                      (:p "to come")))))))
 
 ;;;
 

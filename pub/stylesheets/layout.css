@@ -20,7 +20,7 @@ div.page-wrapper
 /*  width: 70em; */
 }
 
-div#dom1
+div.page-wrapper p
 {
     max-width:50em;
 }
