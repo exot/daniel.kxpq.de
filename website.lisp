@@ -26,6 +26,8 @@
     :init-user-session 'website::init-user-session
     :ignore-default-dependencies nil
     :public-files-path #P"/home/borch/Documents/lang/lisp/cl/source/website/pub/"
+    :dependencies '((:script "http://www.math.tu-dresden.de/alg/MathJax/MathJax.js")
+                    (:script "mathjax-customize"))
     :autostart nil
     :debug t
     )

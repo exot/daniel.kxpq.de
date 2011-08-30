@@ -19,7 +19,8 @@
                 :depends-on ("website"))
                (:module src
                 :components ((:file "init-session"
-                              :depends-on (models views))
+                              :depends-on (models views "layout"))
+                             (:file "layout")
                              (:module models
                               :components ((:file "user")
                                            (:file "poem")))
