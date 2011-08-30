@@ -1,10 +1,6 @@
 
 (in-package :website)
 
-(export '(*default-short-text-length*
-          short-text
-          short-text-presentation))
-
 ;;;
 
 (defparameter *default-short-text-length* 20

@@ -18,7 +18,7 @@
 
 (export '(start-website stop-website))
 
-;; A macro that generates a class or this webapp
+;;; A macro that generates a class or this webapp
 
 (defwebapp website
     :prefix "/"
@@ -30,7 +30,7 @@
     :debug t
     )
 
-;; Top level start & stop scripts
+;;; Top level start & stop scripts
 
 (defun start-website (&rest args)
   "Starts the application by calling 'start-weblocks' with appropriate arguments."
@@ -42,3 +42,6 @@
   (stop-webapp 'website)
   (stop-weblocks))
 
+;;;
+
+nil
