@@ -22,7 +22,7 @@
 
 (defwebapp website
     :prefix "/"
-    :name "Daniels Playground"
+    :name "Daniel's Playground"
     :init-user-session 'website::init-user-session
     :ignore-default-dependencies nil
     :public-files-path #P"/home/borch/Documents/lang/lisp/cl/source/website/pub/"

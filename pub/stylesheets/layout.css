@@ -187,7 +187,6 @@ div.poem-title
 {
     padding-left:11em;
     padding-bottom:2ex;
-    font-size:normal;
 }
 
 div.poem-body
@@ -196,12 +195,10 @@ div.poem-body
     padding-left: 8em;
     text-align: left;
     white-space: pre;
-    font-size:normal;
 }
 
 div.poem-author
 {
     padding-top:2ex;
     text-align:right;
-    font-size:small;
 }
