@@ -21,6 +21,8 @@
                 :components ((:file "init-session"
                               :depends-on (models views "layout"))
                              (:file "layout")
+                             (:module widgets
+                              :components ((:file "poem-selector")))
                              (:module models
                               :components ((:file "user")
                                            (:file "poem")))

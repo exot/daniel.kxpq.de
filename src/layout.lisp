@@ -69,18 +69,42 @@
 ;;;
 
 (defun make-poems-page ()
-  (make-instance 'widget
-                 :children (list
-                            (make-widget
-                             (f_% (with-html
-                                    (:h2 "Poems"))))
-                            (make-instance 'gridedit
-                                           :name 'poems-grid
-                                           :drilldown-type :view
-                                           :data-class 'poem
-                                           :view 'poem-table-view
-                                           :item-data-view 'poem-data-view
-                                           :item-form-view 'poem-form-view))))
+  (make-instance 'static-selector
+                 :panes (list
+                         (cons "list"
+                               (make-instance 'widget
+                                              :children
+                                              (list
+                                               (make-widget
+                                                (f_% (with-html
+                                                       (:h2 "Poems")
+                                                       (:p (:a :href (make-webapp-uri "/poems/edit")
+                                                               "Edit Poems")))))
+                                               (make-poem-list-page))))
+                         (cons "edit"
+                               (make-instance 'widget
+                                              :children
+                                              (list
+                                               (make-widget
+                                                (f_% (with-html
+                                                       (:h2 "Poems")
+                                                       (:p (:a :href (make-webapp-uri "/poems/list")
+                                                               "List Poems")))))
+                                               (make-poem-edit-page)))))))
+
+(defun make-poem-list-page ()
+  (make-instance 'poem-selector
+                 :filter (constantly t)
+                 :view 'poem-print-view))
+
+(defun make-poem-edit-page ()
+  (make-instance 'gridedit
+                 :name 'poems-grid
+                 :drilldown-type :view
+                 :data-class 'poem
+                 :view 'poem-table-view
+                 :item-data-view 'poem-data-view
+                 :item-form-view 'poem-form-view))
 
 ;;;
 

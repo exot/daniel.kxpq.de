@@ -1,6 +1,8 @@
 
 (in-package :website)
 
+;;;
+
 (defclass poem ()
   ((id)
    (title :accessor poem-title
@@ -19,3 +21,7 @@
            :initarg :source
            :initform nil
            :type (or null string))))
+
+;;;
+
+nil
