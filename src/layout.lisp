@@ -69,8 +69,18 @@
 ;;;
 
 (defun make-poems-page ()
-  (f_% (with-html
-         (:h2 "Poems"))))
+  (make-instance 'widget
+                 :children (list
+                            (make-widget
+                             (f_% (with-html
+                                    (:h2 "Poems"))))
+                            (make-instance 'gridedit
+                                           :name 'poems-grid
+                                           :drilldown-type :view
+                                           :data-class 'poem
+                                           :view 'poem-table-view
+                                           :item-data-view 'poem-data-view
+                                           :item-form-view 'poem-form-view))))
 
 ;;;
 

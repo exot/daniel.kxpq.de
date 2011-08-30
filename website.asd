@@ -26,6 +26,9 @@
                                            (:file "poem")))
                              (:module views
                               :components ((:file "user")
-                                           (:file "poem"))
+                                           (:file "poem")
+                                           (:module types
+                                            :components ((:module presentations
+                                                          :components ((:file "short-text"))))))
                               :depends-on (models)))
                 :depends-on (conf "website"))))

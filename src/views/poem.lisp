@@ -1,6 +1,9 @@
 
 (in-package :website)
 
-(defview poem-table-view (:type table :inherit-from '(:scaffold user)))
-(defview poem-data-view  (:type data  :inherit-from '(:scaffold user)))
-(defview poem-form-view  (:type form  :inherit-from '(:scaffold user)))
+(defview poem-table-view (:type table :inherit-from '(:scaffold poem))
+  (body :present-as (short-text :max-length 40)))
+(defview poem-data-view  (:type data  :inherit-from '(:scaffold poem))
+  (body :present-as paragraph))
+(defview poem-form-view  (:type form  :inherit-from '(:scaffold poem))
+  (body :present-as textarea))
