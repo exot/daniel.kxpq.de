@@ -28,7 +28,8 @@
                                            (:file "poem")))
                              (:module views
                               :components ((:file "user")
-                                           (:file "poem")
+                                           (:file "poem"
+                                            :depends-on (types))
                                            (:module types
                                             :components ((:module presentations
                                                           :components ((:file "short-text"))))))
