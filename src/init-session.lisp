@@ -8,6 +8,11 @@
         (list
          (make-widget
           (f_% (with-html
+                 (:div :style "float:right;padding-right:3em"
+                   (:a :href "http://weblocks.viridian-project.de/"
+                     (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")
+                           :alt "Made with Weblocks"
+                           :style "vertical-align:middle")))
                  (:h1 :style "text-align:left;padding:0 0 2em 3em;"
                       "Daniel's Playground"))))
          (make-navigation "Main Menu"
@@ -33,6 +38,10 @@
                           (lisp-implementation-type) " "
                           (lisp-implementation-version)))
         ")")
+      (:a :href "http://common-lisp.net"
+          (:img :src (make-webapp-public-file-uri "images/footer/lisp-lizard.png")
+                :alt "Public Projects for Common Lisp"))
+      (str "&nbsp;")
       (:a :href "http://www.lisp.org"
           (:img :src (make-webapp-public-file-uri "images/footer/lambda-lisp.png")
                 :alt "This page is made with Common Lisp."))
