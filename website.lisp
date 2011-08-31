@@ -3,7 +3,8 @@
   (:use :cl
         :weblocks
         :f-underscore
-        :anaphora)
+        :anaphora
+        :cl-who)
   (:import-from :hunchentoot
                 #:header-in
 		#:set-cookie
