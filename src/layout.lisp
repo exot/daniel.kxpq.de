@@ -23,8 +23,8 @@
                                       (:h2 "At Home")
                                       (:p "This is " (:a :href (make-webapp-uri "/home/personal")
                                                          "Daniel's")
-                                          " homepage, made with Weblocks!  There is not much here
-                                          right now, though."))))
+                                          " homepage.  There is not much here right now,
+                                          though."))))
                          (cons "personal"
                                (f_% (with-html
                                       (:h2 "Daniel Borchmann")
@@ -40,7 +40,37 @@
                                           " with special treatment of Association Rules in a
                                           Description Logic setting.")
                                       (:h3 "Personal Quirks")
-                                      (:p "To come (oh, well, they are already there, of course, but you understand...)")
+                                      (:p "I like programming, math (calculus and algebra), computer
+                                           science, Linux and Unix.  Apart from this,
+                                           expressionistic literature, "
+                                          (:a :href (make-webapp-uri "/poems") "modern poetry")
+                                          ", buddhism and japanese animated cartoons from "
+                                          (:a :href "http://en.wikipedia.org/wiki/Hayao_Miyazaki"
+                                              "Hayao Miyazaki")
+                                          " are of my interest.  I also like to play "
+                                          (:a :href "http://sensei.xmp.net" "Go")
+                                          ".")
+                                      (:p (:dl
+                                           (:dt "Programming")
+                                           (:dd
+                                            (:p (:a :href "http://www.lisp.org" "Common Lisp")
+                                                ", "
+                                                (:a :href "http://www.clojure.org/" "Clojure")
+                                                " and "
+                                                (:a :href "http://www.schemers.org/" "Scheme")
+                                                ", but also "
+                                                (:a :href "http://en.wikipedia.org/wiki/C_(programming_language)"
+                                                    "C")
+                                                ", "
+                                                (:a :href "http://www.perl.org" "Perl")
+                                                ", "
+                                                (:a :href "http://www.dante.de" "LaTeX") " and other
+                                                languages."))
+                                           (:dt "Other Quirks")
+                                           (:dd
+                                            (:p "vegetarian, idealist, dreamer, nonsmoker,
+                                                 teetotaler, non-coffee-drinker, bearded, Lisp
+                                                 jerk (though my programming is not very good)"))))
                                       (:h3 "Public Keys")
                                       (:p "Here are two public keys, for if you want to securely
                                       communicate with me.  I use the main public key only from my
@@ -64,14 +94,26 @@
                                (f_% (with-html
                                       (:h2 "On Math")
                                       (:div :style "text-align:center"
-                                            (:img :src (make-webapp-public-file-uri "/images/math/ramanujan.png"))))))
+                                            (:img :src (make-webapp-public-file-uri "/images/math/ramanujan.png")))
+                                      (:p :style "font-style:italic"
+                                          "To come.")
+                                      (:h3 "Mathematical Fields of Interest")
+                                      (:p (:a :href (make-webapp-uri "/math/algebra/") "Algebra")
+                                          ", "
+                                          (:a :href (make-webapp-uri "/math/fca/") "Formal Concept Analysis")))))
                          (cons "algebra"
                                (f_% (with-html
                                       (:h2 "Algebra"))))
                          (cons "fca"
                                (f_% (with-html
                                       (:h2 "Formal Concept Analysis")
-                                      (:p "to come")))))))
+                                      (:p "Formal Concept Analysis (FCA) is a mathematical theory
+                                      developed in the early eighties to restructure lattice theory
+                                      by Prof. Rudolf Wille at the TU Darmstadt.  Since then, it has
+                                      developed into a powerful theory for conceptual structuring
+                                      and knowledge acquisition, with connections to other knowledge
+                                      representation formalisms like Description Logics.")
+                                      (:p :style "font-style:italic" "More to come.")))))))
 
 ;;;
 
@@ -122,10 +164,7 @@
 
 (defun make-common-lisp-page ()
   (f_% (with-html
-         (:h2 "Common Lisp the Language")
-         (:a :href (make-webapp-public-file-uri "init-session.lisp")
-             "Link")
-         (:pre "(+ 1 2 3)"))))
+         (:h2 "The Lisp Family"))))
 
 ;;;
 
