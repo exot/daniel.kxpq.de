@@ -95,7 +95,7 @@
 (defun make-poem-list-page ()
   (make-instance 'poem-selector
                  :filter (constantly t)
-                 :view 'poem-print-view))
+                 :poem-widget-class 'standard-poem-widget))
 
 (defun make-poem-edit-page ()
   (make-instance 'gridedit

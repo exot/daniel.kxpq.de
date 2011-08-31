@@ -22,7 +22,7 @@
                               :depends-on (models views "layout"))
                              (:file "layout")
                              (:module widgets
-                              :components ((:file "poem-selector")))
+                              :components ((:file "poem")))
                              (:module models
                               :components ((:file "user")
                                            (:file "poem")))

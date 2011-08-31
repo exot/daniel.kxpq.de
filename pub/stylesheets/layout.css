@@ -17,7 +17,7 @@ div.page-wrapper
 /* IE 6 specific hacks (has layout and min-width)*/
 * html div.page-wrapper
 {
-/*  width: 70em; */
+  width: 70em;
 }
 
 div.page-wrapper p
@@ -178,7 +178,7 @@ div#main-menu div.menu
 
 /* Poems */
 
-div.poem-print
+div.standard-poem
 {
     width:30em;
 }
