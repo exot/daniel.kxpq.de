@@ -3,6 +3,18 @@
 
 ;;;
 
+(defmethod render-navigation-menu ((obj navigation) &rest args &key menu-args &allow-other-keys)
+  (declare (ignore args))
+  (apply #'render-menu (navigation-menu-items obj)
+         :base (selector-base-uri obj)
+         :selected-pane nil
+         :header (navigation-header obj)
+         :container-id (dom-id obj)
+         :empty-message "No navigation entries"
+         menu-args))
+
+;;;
+
 (defun make-home-page ()
   (make-instance 'static-selector
                  :panes (list
