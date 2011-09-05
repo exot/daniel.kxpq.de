@@ -147,7 +147,6 @@
 
 (defun make-poem-list-page ()
   (make-instance 'poem-selector
-                 :filter (constantly t)
                  :poem-widget-class 'standard-poem-widget))
 
 (defun make-poem-edit-page ()
