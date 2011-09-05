@@ -14,8 +14,9 @@
     (with-html
       (:div :class "view standard-poem"
             :style "padding-top:3ex;padding-bottom:3ex;"
-        (:div :class "poem-title"
-          (str (poem-title poem)))
+        (when (poem-title poem)
+          (htm (:div :class "poem-title"
+                 (str (poem-title poem)))))
         (:div :class "poem-body"
           (str (poem-body poem)))
         (:div :class "poem-author"

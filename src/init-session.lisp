@@ -37,7 +37,7 @@
   "Poem displayed on the first page.")
 
 (defun init-user-session (root)
-  (setf *initial-poem* (find-poem-by-title "Dead Poets Opening"))
+  (setf *initial-poem* (find-poem-by-start "I went to the woods"))
   (setf (widget-children root)
         (list
          (make-widget
