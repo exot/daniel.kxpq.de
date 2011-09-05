@@ -26,17 +26,23 @@
      (render-widget (slot-value self 'real-child-widget) :inlinep t))
     (t (call-next-method))))
 
+(defun accept-user-p (email password-hash)
+  (let ((users (find-persistent-objects *store* 'user)))
+    (find-if (f_ (and (equalp email (user-email _))
+                      (equalp password-hash (user-password-hash _))))
+             users)))
+
 (defun check-login (login-widget credentials-obj)
   "Check the user's login credentials"
-  (declare (ignore credentials-obj))
   (cond
-    ; For now, we accept anything
-    (t
+    ((accept-user-p (slot-value credentials-obj 'email)
+                    (slot-value credentials-obj 'password))
       (when (login-maybe-child-widget login-widget)
         (setf (slot-value login-widget 'real-child-widget)
               (funcall (login-maybe-child-widget login-widget)))
         (setf (login-maybe-child-widget login-widget) nil))
-      t)))
+      t)
+    (t nil)))
 
 ;;;
 
