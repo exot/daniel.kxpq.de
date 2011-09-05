@@ -39,10 +39,10 @@
                               (f_% (with-html
                                      (:hr)
                                      (:div :class "poem-selector"
-                                           (loop
-                                              :for poem :in poems-list
-                                              :do (render-widget (make-instance (poem-selector-poem-widget-class obj)
-                                                                                :poem poem))
+                                       (loop
+                                          :for poem :in poems-list
+                                          :do (render-widget (make-instance (poem-selector-poem-widget-class obj)
+                                                                            :poem poem))
                                               (with-html (:hr)))))))))
             (values widget tokens nil :no-cache)))))
 
