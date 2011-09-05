@@ -180,7 +180,9 @@ div#main-menu div.menu
 
 div.standard-poem
 {
+    font-family: Georgia,Palatino,Palatino Linotype,FreeSerif,serif;
     width:30em;
+    font-size:16px;
 }
 
 div.poem-title
@@ -191,7 +193,6 @@ div.poem-title
 
 div.poem-body
 {
-    font-family: "urw chancery l","zapf chancery";
     padding-left: 8em;
     text-align: left;
     white-space: pre;
