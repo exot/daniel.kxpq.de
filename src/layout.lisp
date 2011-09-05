@@ -20,11 +20,15 @@
                  :panes (list
                          (cons "main"
                                (f_% (with-html
-                                      (:h2 "At Home")
+                                      (if *initial-poem*
+                                        (render-widget (make-instance 'standard-poem-widget
+                                                                      :poem *initial-poem*))
+                                        (htm (:h2 "At Home")))
                                       (:p "This is " (:a :href (make-webapp-uri "/home/personal")
                                                          "Daniel's")
-                                          " homepage.  There is not much here right now,
-                                          though."))))
+                                          " homepage.")
+                                      (:p :style "font-style:italic"
+                                          "More to come."))))
                          (cons "personal"
                                (f_% (with-html
                                       (:h2 "Daniel Borchmann")

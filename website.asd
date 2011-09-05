@@ -18,9 +18,11 @@
                 :components ((:file "stores"))
                 :depends-on ("website"))
                (:module src
+                :depends-on (conf "website")
                 :components ((:file "init-session"
                               :depends-on (models views "layout"))
-                             (:file "layout")
+                             (:file "layout"
+                              :depends-on (widgets))
                              (:module widgets
                               :components ((:file "poem")))
                              (:module models
@@ -33,5 +35,4 @@
                                            (:module types
                                             :components ((:module presentations
                                                           :components ((:file "short-text"))))))
-                              :depends-on (models)))
-                :depends-on (conf "website"))))
+                              :depends-on (models))))))

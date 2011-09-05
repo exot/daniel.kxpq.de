@@ -1,26 +1,7 @@
 
 (in-package :website)
 
-;;; Define callback function to initialize new sessions
-
-(defun init-user-session (root)
-  (setf (widget-children root)
-        (list
-         (make-widget
-          (f_% (with-html
-                 (:div :style "float:right;padding-right:3em"
-                   (:a :href "http://weblocks.viridian-project.de/"
-                     (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")
-                           :alt "Made with Weblocks"
-                           :style "vertical-align:middle")))
-                 (:h1 :style "text-align:left;padding:0 0 2em 3em;"
-                      "Daniel's Playground"))))
-         (make-navigation "Main Menu"
-                          "home"       (make-home-page)
-                          "math"       (make-math-page)
-                          "poems"      (make-poems-page)
-                          "lisp"       (make-common-lisp-page)
-                          "conexp-clj" (make-conexp-clj-page)))))
+;;;
 
 (defmethod render-page-body :before ((app website) rendered-html)
   (declare (ignore rendered-html))
@@ -49,6 +30,32 @@
       (:a :href "http://www.catb.org/hacker-emblem/"
           (:img :src (make-webapp-public-file-uri "images/footer/hacker.png")
                 :alt "Thou hacking shall be beautiful.")))))
+
+;;;
+
+(defvar *initial-poem* nil
+  "Poem displayed on the first page.")
+
+(defun init-user-session (root)
+  (setf *initial-poem* (find-poem-by-title "Dead Poets Opening"))
+  (setf (widget-children root)
+        (list
+         (make-widget
+          (f_% (with-html
+                 (:div :style "float:right;padding-right:3em"
+                   (:a :href "http://weblocks.viridian-project.de/"
+                     (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")
+                           :alt "Made with Weblocks"
+                           :style "vertical-align:middle")))
+                 (:h1 :style "text-align:left;padding:0 0 2em 3em;"
+                      "Daniel's Playground"))))
+         (make-navigation "Main Menu"
+                          "home"       (make-home-page)
+                          "math"       (make-math-page)
+                          "poems"      (make-poems-page)
+                          "lisp"       (make-common-lisp-page)
+                          "conexp-clj" (make-conexp-clj-page)))))
+
 
 ;;;
 

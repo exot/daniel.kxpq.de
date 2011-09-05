@@ -187,13 +187,13 @@ div.standard-poem
 
 div.poem-title
 {
-    padding-left:9em;
+    padding-left:6em;
     padding-bottom:2ex;
 }
 
 div.poem-body
 {
-    padding-left: 8em;
+    padding-left: 5em;
     text-align: left;
     white-space: pre;
 }
