@@ -37,7 +37,8 @@
   "Poem displayed on the first page.")
 
 (defun init-user-session (root)
-  (setf *initial-poem* (find-poem-by-start "I went to the woods"))
+  (unless *initial-poem*
+    (setf *initial-poem* (find-poem-by-start "I went to the woods")))
   (setf (widget-children root)
         (list
          (make-widget
@@ -55,7 +56,6 @@
                           "poems"      (make-poems-page)
                           "lisp"       (make-common-lisp-page)
                           "conexp-clj" (make-conexp-clj-page)))))
-
 
 ;;;
 
