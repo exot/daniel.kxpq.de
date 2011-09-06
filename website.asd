@@ -24,7 +24,8 @@
                              (:file "layout"
                               :depends-on (widgets))
                              (:module widgets
-                              :components ((:file "poem")
+                              :components ((:file "header")
+                                           (:file "poem")
                                            (:file "login-maybe")))
                              (:module models
                               :components ((:file "user")

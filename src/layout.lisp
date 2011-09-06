@@ -15,16 +15,34 @@
 
 ;;;
 
+(defun make-start-page ()
+  (make-instance 'widget
+                 :children
+                 (list
+                  (make-instance 'header
+                                 :default-title "Daniel's Playground"
+                                 :title-list '(("home" "At Home")
+                                               ("math" "On Math")
+                                               ("poems" "Poems")
+                                               ("lisp" "Lisp")))
+                  (make-navigation "Main Menu"
+                                   "home"       (make-home-page)
+                                   "math"       (make-math-page)
+                                   "poems"      (make-poems-page)
+                                   "lisp"       (make-common-lisp-page)
+                                   "conexp-clj" (make-conexp-clj-page)))))
+
+;;;
+
 (defun make-home-page ()
   (make-instance 'static-selector
                  :panes (list
                          (cons "main"
                                (make-widget
                                 (f_% (with-html
-                                       (if *initial-poem*
-                                           (render-widget (make-instance 'standard-poem-widget
-                                                                         :poem *initial-poem*))
-                                           (htm (:h2 "At Home")))
+                                       (when *initial-poem*
+                                         (render-widget (make-instance 'standard-poem-widget
+                                                                       :poem *initial-poem*)))
                                        (:p "This is " (:a :href (make-webapp-uri "/home/personal")
                                                           "Daniel's")
                                            " homepage.")
@@ -33,8 +51,7 @@
                          (cons "personal"
                                (make-widget
                                 (f_% (with-html
-                                       (:h2 "Daniel Borchmann")
-                                       (:p "I'm a PhD math student at the "
+                                       (:p "My name is Daniel Borchmann and I'm a PhD math student at the "
                                            (:a :href "http://www.math.tu-dresden.de"
                                                "Technische Universität Dresden")
                                            " under supervision of "
@@ -98,15 +115,11 @@
                  :panes (list
                          (cons "main"
                                (f_% (with-html
-                                      (:h2 "On Math")
-                                      (:div :style "text-align:center"
-                                            (:img :src (make-webapp-public-file-uri "/images/math/ramanujan.png")))
-                                      (:p :style "font-style:italic"
-                                          "To come.")
-                                      (:h3 "Mathematical Fields of Interest")
                                       (:p (:a :href (make-webapp-uri "/math/algebra/") "Algebra")
                                           ", "
-                                          (:a :href (make-webapp-uri "/math/fca/") "Formal Concept Analysis")))))
+                                          (:a :href (make-webapp-uri "/math/fca/") "Formal Concept Analysis"))
+                                      (:p :style "font-style:italic"
+                                          "More to come"))))
                          (cons "algebra"
                                (f_% (with-html
                                       (:h2 "Algebra"))))
@@ -134,11 +147,7 @@
                          (cons "list"
                                (make-instance 'widget
                                               :children
-                                              (list
-                                               (make-widget
-                                                (f_% (with-html
-                                                       (:h2 "Poems"))))
-                                               (make-poem-list-page))))
+                                               (make-poem-list-page)))
                          (cons "edit"
                                (make-instance 'login-maybe
                                               :child-widget (f_%       
@@ -154,7 +163,6 @@
                  :children (list
                             (make-widget
                              (f_% (with-html
-                                    (:h2 "Poems")
                                     (:p (:a :href (make-webapp-uri "/poems/list")
                                             "List Poems")))))
                             (make-instance 'gridedit
@@ -169,7 +177,8 @@
 
 (defun make-common-lisp-page ()
   (f_% (with-html
-         (:h2 "The Lisp Family"))))
+         (:p :style "font-style:italic"
+             "To come"))))
 
 ;;;
 

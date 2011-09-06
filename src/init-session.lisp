@@ -40,22 +40,7 @@
   (unless *initial-poem*
     (setf *initial-poem* (find-poem-by-start "I went to the woods")))
   (setf (widget-children root)
-        (list
-         (make-widget
-          (f_% (with-html
-                 (:div :style "float:right;padding-right:3em"
-                   (:a :href "http://weblocks.viridian-project.de/"
-                     (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")
-                           :alt "Made with Weblocks"
-                           :style "vertical-align:middle")))
-                 (:h1 :style "text-align:left;padding:0 0 2em 3em;"
-                      "Daniel's Playground"))))
-         (make-navigation "Main Menu"
-                          "home"       (make-home-page)
-                          "math"       (make-math-page)
-                          "poems"      (make-poems-page)
-                          "lisp"       (make-common-lisp-page)
-                          "conexp-clj" (make-conexp-clj-page)))))
+        (make-start-page)))
 
 ;;;
 

@@ -28,8 +28,7 @@
   ((poem-widget-class :accessor poem-selector-poem-widget-class
                       :initarg  :poem-widget-class
                       :type     (or class symbol))
-   (poem-list :type list))
-  (:documentation "Displays poems, selected by filter function."))
+   (poem-list :type list)))
 
 (defmethod initialize-instance :after ((obj poem-selector) &key &allow-other-keys)
   (setf (on-demand-lookup-function obj)
