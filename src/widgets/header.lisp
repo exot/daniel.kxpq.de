@@ -21,14 +21,16 @@
                 (setf title (or (second (find-if (f_ (equalp (first _) (first tokens)))
                                                  (header-title-list header)))
                                 (header-default-title header))))
-            (values (make-widget (f_% (with-html
-                                        (:div :style "float:right;padding-right:3em"
-                                              (:a :href "http://weblocks.viridian-project.de/"
-                                                  (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")
-                                                        :alt "Made with Weblocks"
-                                                        :style "vertical-align:middle")))
-                                        (:h1 :style "text-align:left;padding:0 0 2em 3em;"
-                                             (str title)))))
+            (values (make-widget
+                     (f_% (with-html
+                            (:div :style "display:table"
+                             (:div :style "display:table-cell;width:100%"
+                               (:h1 (str title)))
+                             (:div :style "display:table-cell;"
+                                (:a :href "http://weblocks.viridian-project.de/"
+                                    (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")
+                                          :alt "Made with Weblocks"
+                                          :style "vertical-align:middle")))))))
                     nil
                     tokens
                     :no-cache)))))

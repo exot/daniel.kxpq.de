@@ -118,10 +118,12 @@ div#main-menu div.menu
 
 .header
 {
-  height: 52px;
+/*  height: 52px; */
 /*  background: url(/weblocks-common/pub/images/header/background.png) repeat-x;*/
-  margin-top: -5px;
-  margin-bottom: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 3em;
+  margin-right: 3em;
 }
 
 .header .extra-top-1

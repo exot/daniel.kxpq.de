@@ -84,6 +84,7 @@ h1, h2
   color: #29364F;
   font-weight: bold;
   font-family: Garamond, New York, serif;
+  margin-top: 0;
 }
 
 .view h1 .action, .view fieldset h1 .action
