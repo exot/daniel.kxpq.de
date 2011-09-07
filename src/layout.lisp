@@ -63,71 +63,11 @@
                                        (when *initial-poem*
                                          (render-widget (make-instance 'standard-poem-widget
                                                                        :poem *initial-poem*)))
-                                       (:p "This is " (:a :href (make-webapp-uri "/home/personal")
-                                                          "Daniel's")
-                                           " homepage.")
-                                       (to-come)))))
+                                       (render-widget (html-from-markdown "main.md"))))))
                          (cons "personal"
-                               (make-widget
-                                (f_% (with-html
-                                       (:p "My name is Daniel Borchmann and I'm a PhD math student at the "
-                                           (:a :href "http://www.math.tu-dresden.de"
-                                               "Technische Universität Dresden")
-                                           " under supervision of "
-                                           (:a :href "http://tu-dresden.de/Members/bernhard.ganter"
-                                               "Prof. Bernhard Ganter")
-                                           ".  The main focus of my work lies on "
-                                           (:a :href (make-webapp-uri "/math/fca/")
-                                               "Formal Concept Analysis")
-                                           " with special treatment of Association Rules in a
-                                           Description Logic setting.")
-                                       (:h3 "Personal Quirks")
-                                       (:p "I like programming, math (calculus and algebra), computer
-                                            science, Linux and Unix.  Apart from this,
-                                            expressionistic literature, "
-                                           (:a :href (make-webapp-uri "/poems") "modern poetry")
-                                           ", buddhism and japanese animated cartoons from "
-                                           (:a :href "http://en.wikipedia.org/wiki/Hayao_Miyazaki"
-                                               "Hayao Miyazaki")
-                                           " are of my interest.  I also like to play "
-                                           (:a :href "http://sensei.xmp.net" "Go")
-                                           ".")
-                                       (:p (:dl
-                                            (:dt "Programming")
-                                            (:dd
-                                             (:p (:a :href "http://www.lisp.org" "Common Lisp")
-                                                 ", "
-                                                 (:a :href "http://www.clojure.org/" "Clojure")
-                                                 " and "
-                                                 (:a :href "http://www.schemers.org/" "Scheme")
-                                                 ", but also "
-                                                 (:a :href "http://en.wikipedia.org/wiki/C_(programming_language)"
-                                                     "C")
-                                                 ", "
-                                                 (:a :href "http://www.perl.org" "Perl")
-                                                 ", "
-                                                 (:a :href "http://www.dante.de" "LaTeX")
-                                                 " and other languages."))
-                                            (:dt "Other Quirks")
-                                            (:dd
-                                             (:p "vegetarian, idealist, dreamer, nonsmoker,
-                                                  teetotaler, non-coffee-drinker, bearded, Lisp
-                                                  jerk (though my programming is not very good)"))))
-                                       (:h3 "Public Keys")
-                                       (:p "Here are two public keys, for if you want to securely
-                                       communicate with me.  I use the main public key only from my
-                                       personal computers, so it can be regarded as more secure,
-                                       however reply times might be longer.  Use the external public
-                                       key if this is a problem.")
-                                       (:dl
-                                        (:dt "Main Public Key")
-                                        (:dd (:a :href (make-webapp-public-file-uri "public.key")
-                                                 "0xa1098f58"))
-                                        (:dt "External Public Key")
-                                        (:dd (:a :href (make-webapp-public-file-uri "extern-public.key")
-                                                 "0x25a1906f"))))))))))
+                               (html-from-markdown "personal.md")))))
 
-;;;
+;;; Math
 
 (defun make-math-page ()
   (make-instance 'static-selector
@@ -140,38 +80,23 @@
                                            (:a :href (make-webapp-uri "/math/fca/") "Formal Concept Analysis"))
                                        (to-come)))))
                          (cons "algebra"
-                               (make-widget
-                                (f_% (with-html
-                                       (:h2 "Algebra")))))
+                               (html-from-markdown "algebra.md"))
                          (cons "fca"
-                               (make-widget
-                                (f_% (with-html
-                                       (:h2 "Formal Concept Analysis")
-                                       (:p "Formal Concept Analysis (FCA) is a mathematical theory
-                                       developed in the early eighties to restructure lattice theory
-                                       by Prof. Rudolf Wille at the TU Darmstadt.  Since then, it has
-                                       developed into a powerful theory for conceptual structuring
-                                       and knowledge acquisition, with connections to other knowledge
-                                       representation formalisms like Description Logics.")
-                                       (:h3 "Conferences")
-                                       (to-come)
-                                       (:h3 "Useful Resources")
-                                       (to-come))))))))
+                               (html-from-markdown "fca.md")))))
 
-;;;
+;;; conexp-clj
 
 (defun make-conexp-clj-page ()
   (html-from-markdown "conexp-clj.md"))
 
-;;;
+;;; Poems
 
 (defun make-poems-page ()
   (make-instance 'static-selector
                  :panes (list
                          (cons "list" (make-poem-list-page))
                          (cons "edit" (make-instance 'login-maybe
-                                                     :child-widget (f_%       
-                                                                     (make-poem-edit-page))
+                                                     :child-widget (f_% (make-poem-edit-page))
                                                      :on-login #'check-login)))))
 
 (defun make-poem-list-page ()
@@ -191,7 +116,7 @@
                                :item-data-view 'poem-data-view
                                :item-form-view 'poem-form-view))))
 
-;;;
+;;; Common Lisp
 
 (defun make-common-lisp-page ()
   (html-from-markdown "lisp.md"))
