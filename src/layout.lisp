@@ -34,7 +34,7 @@
           (:img :src (make-webapp-public-file-uri "images/footer/hacker.png")
                 :alt "Thou hacking shall be beautiful.")))))
 
-;;;
+;;; Starting point
 
 (defun make-start-page ()
   (make-widget (list
@@ -52,7 +52,7 @@
                                  "lisp"       (make-common-lisp-page)
                                  "conexp-clj" (make-conexp-clj-page)))))
 
-;;;
+;;; Home
 
 (defun make-home-page ()
   (make-instance 'static-selector
