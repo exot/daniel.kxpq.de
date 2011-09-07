@@ -21,11 +21,14 @@
   "Writes HTML output generated from the markdown file found in path."
   (let* ((default-path (make-pathname :directory (append (pathname-directory (asdf-system-directory :website))
                                                          (list "src" "pages"))))
-         (html         (with-output-to-string (s)
-                         (cl-markdown:markdown (merge-pathnames default-path path)
-                                               :stream s))))
+         (html nil))
     (make-widget
-     (f_% (princ html *weblocks-output-stream*)))))
+     (f_%
+       (unless html
+         (setf html (with-output-to-string (s)
+                      (cl-markdown:markdown (merge-pathnames default-path path)
+                                            :stream s))))
+       (princ html *weblocks-output-stream*)))))
 
 ;;;
 
