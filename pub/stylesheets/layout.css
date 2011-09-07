@@ -20,7 +20,7 @@ div.page-wrapper
   width: 70em;
 }
 
-div.page-wrapper p
+div.page-wrapper * div.navigation-body *
 {
     max-width:50em;
 }
