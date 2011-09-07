@@ -3,22 +3,11 @@
 
 ;;;
 
-(defmethod render-page-body :before ((app website) rendered-html)
-  (declare (ignore rendered-html))
-  nil)
-
 (defmethod render-page-body :after ((app website) rendered-html)
   (declare (ignore rendered-html))
   (with-html
     (:div :class "footer"
           :style "color:white"
-      (:p "Running on "
-        (str (concatenate 'string (server-type) " " (server-version)))
-        " ("
-        (str (concatenate 'string
-                          (lisp-implementation-type) " "
-                          (lisp-implementation-version)))
-        ")")
       (:a :href "http://common-lisp.net"
           (:img :src (make-webapp-public-file-uri "images/footer/lisp-lizard.png")
                 :alt "Public Projects for Common Lisp"))

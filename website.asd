@@ -12,29 +12,33 @@
   :author "Daniel"
   :licence "None"
   :description "website"
-  :depends-on (:weblocks :cl-prevalence)
+  :depends-on (:weblocks
+               :cl-prevalence
+               :cl-markdown)
   :components ((:file "website")
                (:module conf
-                :components ((:file "stores"))
-                :depends-on ("website"))
+                :depends-on ("website")
+                :components ((:file "stores")))
                (:module src
                 :depends-on (conf "website")
-                :components ((:file "init-session"
-                              :depends-on (models views "layout"))
-                             (:file "layout"
-                              :depends-on (widgets))
-                             (:module widgets
-                              :components ((:file "header")
-                                           (:file "poem")
-                                           (:file "login-maybe")))
+                :components ((:file "util")
                              (:module models
                               :components ((:file "user")
                                            (:file "poem")))
                              (:module views
+                              :depends-on (models)
                               :components ((:file "user")
-                                           (:file "poem"
-                                            :depends-on (types))
                                            (:module types
                                             :components ((:module presentations
-                                                          :components ((:file "short-text"))))))
-                              :depends-on (models))))))
+                                                          :components ((:file "short-text")))))
+                                           (:file "poem"
+                                            :depends-on (types))))
+                             (:module widgets
+                              :depends-on (models)
+                              :components ((:file "header")
+                                           (:file "poem")
+                                           (:file "login-maybe")))
+                             (:file "layout"
+                              :depends-on (models views widgets))
+                             (:file "init-session"
+                              :depends-on ("layout"))))))

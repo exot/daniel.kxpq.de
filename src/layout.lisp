@@ -16,21 +16,20 @@
 ;;;
 
 (defun make-start-page ()
-  (make-instance 'widget
-                 :children
-                 (list
-                  (make-instance 'header
-                                 :default-title "Daniel's Playground"
-                                 :title-list '(("home" "At Home")
-                                               ("math" "On Math")
-                                               ("poems" "Poems")
-                                               ("lisp" "Lisp")))
-                  (make-navigation "Main Menu"
-                                   "home"       (make-home-page)
-                                   "math"       (make-math-page)
-                                   "poems"      (make-poems-page)
-                                   "lisp"       (make-common-lisp-page)
-                                   "conexp-clj" (make-conexp-clj-page)))))
+  (make-widget (list
+                (make-instance 'header
+                               :default-title "Daniel's Playground"
+                               :title-list '(("home" "At Home")
+                                             ("math" "On Math")
+                                             ("poems" "Poems")
+                                             ("lisp" "Lisp")
+                                             ("conexp-clj" "Conexp in Clojure")))
+                (make-navigation "Main Menu"
+                                 "home"       (make-home-page)
+                                 "math"       (make-math-page)
+                                 "poems"      (make-poems-page)
+                                 "lisp"       (make-common-lisp-page)
+                                 "conexp-clj" (make-conexp-clj-page)))))
 
 ;;;
 
@@ -46,8 +45,7 @@
                                        (:p "This is " (:a :href (make-webapp-uri "/home/personal")
                                                           "Daniel's")
                                            " homepage.")
-                                       (:p :style "font-style:italic"
-                                           "More to come.")))))
+                                       (to-come)))))
                          (cons "personal"
                                (make-widget
                                 (f_% (with-html
@@ -114,71 +112,68 @@
   (make-instance 'static-selector
                  :panes (list
                          (cons "main"
-                               (f_% (with-html
-                                      (:p (:a :href (make-webapp-uri "/math/algebra/") "Algebra")
-                                          ", "
-                                          (:a :href (make-webapp-uri "/math/fca/") "Formal Concept Analysis"))
-                                      (:p :style "font-style:italic"
-                                          "More to come"))))
+                               (make-widget
+                                (f_% (with-html
+                                       (:p (:a :href (make-webapp-uri "/math/algebra/") "Algebra")
+                                           ", "
+                                           (:a :href (make-webapp-uri "/math/fca/") "Formal Concept Analysis"))
+                                       (to-come)))))
                          (cons "algebra"
-                               (f_% (with-html
-                                      (:h2 "Algebra"))))
+                               (make-widget
+                                (f_% (with-html
+                                       (:h2 "Algebra")))))
                          (cons "fca"
-                               (f_% (with-html
-                                      (:h2 "Formal Concept Analysis")
-                                      (:p "Formal Concept Analysis (FCA) is a mathematical theory
-                                      developed in the early eighties to restructure lattice theory
-                                      by Prof. Rudolf Wille at the TU Darmstadt.  Since then, it has
-                                      developed into a powerful theory for conceptual structuring
-                                      and knowledge acquisition, with connections to other knowledge
-                                      representation formalisms like Description Logics.")
-                                      (:p :style "font-style:italic" "More to come.")))))))
+                               (make-widget
+                                (f_% (with-html
+                                       (:h2 "Formal Concept Analysis")
+                                       (:p "Formal Concept Analysis (FCA) is a mathematical theory
+                                       developed in the early eighties to restructure lattice theory
+                                       by Prof. Rudolf Wille at the TU Darmstadt.  Since then, it has
+                                       developed into a powerful theory for conceptual structuring
+                                       and knowledge acquisition, with connections to other knowledge
+                                       representation formalisms like Description Logics.")
+                                       (:h3 "Conferences")
+                                       (to-come)
+                                       (:h3 "Useful Resources")
+                                       (to-come))))))))
 
 ;;;
 
 (defun make-conexp-clj-page ()
-  (f_% (redirect "http://www.math.tu-dresden.de/~borch/conexp-clj/")))
+  (html-from-markdown "conexp-clj.md"))
 
 ;;;
 
 (defun make-poems-page ()
   (make-instance 'static-selector
                  :panes (list
-                         (cons "list"
-                               (make-instance 'widget
-                                              :children
-                                               (make-poem-list-page)))
-                         (cons "edit"
-                               (make-instance 'login-maybe
-                                              :child-widget (f_%       
-                                                              (make-poem-edit-page))
-                                              :on-login #'check-login)))))
+                         (cons "list" (make-poem-list-page))
+                         (cons "edit" (make-instance 'login-maybe
+                                                     :child-widget (f_%       
+                                                                     (make-poem-edit-page))
+                                                     :on-login #'check-login)))))
 
 (defun make-poem-list-page ()
   (make-instance 'poem-selector
                  :poem-widget-class 'standard-poem-widget))
 
 (defun make-poem-edit-page ()
-  (make-instance 'widget
-                 :children (list
-                            (make-widget
-                             (f_% (with-html
-                                    (:p (:a :href (make-webapp-uri "/poems/list")
-                                            "List Poems")))))
-                            (make-instance 'gridedit
-                                           :name 'poems-grid
-                                           :drilldown-type :view
-                                           :data-class 'poem
-                                           :view 'poem-table-view
-                                           :item-data-view 'poem-data-view
-                                           :item-form-view 'poem-form-view))))
+  (make-widget (list
+                (f_% (with-html
+                       (:p (:a :href (make-webapp-uri "/poems/list")
+                               "List Poems"))))
+                (make-instance 'gridedit
+                               :name 'poems-grid
+                               :drilldown-type :view
+                               :data-class 'poem
+                               :view 'poem-table-view
+                               :item-data-view 'poem-data-view
+                               :item-form-view 'poem-form-view))))
 
 ;;;
 
 (defun make-common-lisp-page ()
-  (f_% (with-html
-         (:p :style "font-style:italic"
-             "To come"))))
+  (html-from-markdown "lisp.md"))
 
 ;;;
 
