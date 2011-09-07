@@ -6,7 +6,7 @@ a [Clojure][]-rewrite of [Conexp][].
 
 **WARNING**: This software is in alpha stage. Expect the unexpected while using it.
 
-## Sources
+### Sources
 
 can be found [here][conexp-clj-src]. Note that you need [Leiningen][lein] to use them properly.
 
@@ -15,7 +15,7 @@ can be found [here][conexp-clj-src]. Note that you need [Leiningen][lein] to use
 [lein]: http://github.com/technomancy/leiningen
   (leiningen, a bulding tool for clojure)
 
-## Binary Development Snapshot
+### Binary Development Snapshot
 
  * [Last tagged release](http://www.math.tu-dresden.de/~borch/conexp-clj/conexp-clj.zip) (0.0.6-alpha)
  * [Current snapshot](http://www.math.tu-dresden.de/~borch/conexp-clj/conexp-clj-SNAPSHOT.zip)
@@ -32,7 +32,7 @@ be finished at all?)), call the script with `--gui`:
 
     conexp-clj/bin/conexp-clj.sh --gui
 
-## Features
+### Features
 
  * Basic Operations on Formal Contexts
  * Relational Algebra with Formal Contexts
@@ -46,7 +46,7 @@ be finished at all?)), call the script with `--gui`:
  * A bit of Fuzzy-FCA
  * Interface for sage
 
-## Documentation
+### Documentation
 
 By now, documentation is done via example files. Besides the special examples files given below,
 there exist some example files which give a general overview of how to use conexp-clj. Those files
@@ -68,7 +68,7 @@ For finding functions you may find useful, you can use `find-doc`
 
     (find-doc "Whatever you may find useful")
 
-## Further Examples
+### Further Examples
 
  * [Attribute Exploration](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/exploration.clj),
    a demonstration how attribute exploration can be done in conexp-clj.
@@ -87,7 +87,7 @@ For finding functions you may find useful, you can use `find-doc`
  * [Tamari Lattice](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/tamari-lattice.clj),
    the lattice of all bracketings of n+1 symbols (a.k.a. the Tamari Lattice of parameter n)
 
-## To come
+### To come
 
  * More Tests and Documentation
  * More Context IO Formats (all supported by FCAStone)
