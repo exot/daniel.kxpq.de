@@ -73,12 +73,7 @@
   (make-instance 'static-selector
                  :panes (list
                          (cons "main"
-                               (make-widget
-                                (f_% (with-html
-                                       (:p (:a :href (make-webapp-uri "/math/algebra/") "Algebra")
-                                           ", "
-                                           (:a :href (make-webapp-uri "/math/fca/") "Formal Concept Analysis"))
-                                       (to-come)))))
+                               (html-from-markdown "math.md"))
                          (cons "algebra"
                                (html-from-markdown "algebra.md"))
                          (cons "fca"
