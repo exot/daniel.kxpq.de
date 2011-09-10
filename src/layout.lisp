@@ -63,6 +63,7 @@
                                        (when *initial-poem*
                                          (render-widget (make-instance 'standard-poem-widget
                                                                        :poem *initial-poem*)))
+                                       (:hr)
                                        (render-widget (html-from-markdown "main.md"))))))
                          (cons "personal"
                                (html-from-markdown "personal.md")))))

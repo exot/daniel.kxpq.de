@@ -36,8 +36,14 @@
           (let* ((poems-list (find-persistent-objects *store* 'poem))
                  (widget     (make-widget
                               (f_% (with-html
-                                     (:hr)
                                      (:div :class "poem-selector"
+                                       (with-html
+                                         (:h2 "Selected Poems")
+                                         (:p "Here you may find a very personal collection of poems I like.")
+                                         (:p "When I find some more time, you may also select poems
+                                         by several criteria like author, title, contains...  But
+                                         this needs to be implemented.  Right now, you just see all of them."))
+                                       (:hr)
                                        (loop
                                           :for poem :in poems-list
                                           :do (render-widget (make-instance (poem-selector-poem-widget-class obj)
