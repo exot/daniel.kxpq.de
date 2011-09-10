@@ -74,8 +74,6 @@
                  :panes (list
                          (cons "main"
                                (html-from-markdown "math.md"))
-                         (cons "algebra"
-                               (html-from-markdown "algebra.md"))
                          (cons "fca"
                                (html-from-markdown "fca.md")))))
 
