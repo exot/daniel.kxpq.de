@@ -16,4 +16,12 @@ currently around.  Three of them are
 [scheme]: http://www.schemers.org "Scheme in general"
 [clojure]: http://www.clojure.org "Clojure"
 
-<p style="font-style:italic">More to come</p>
+
+## Thoughts on Weblocks
+
+This webpage is made with weblocks (yay!) and here are some random thoughts about it.
+
+* If you make a children of a widget dirty, then the widget itself is not marked dirty.  This is of
+  course the right thing to do, because otherwise you could just mark the root widget as dirty.
+  However, it might also may be problematic if the widget must be repainted, see poems.  How to
+  avoid this?
