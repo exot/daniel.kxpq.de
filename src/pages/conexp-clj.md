@@ -52,11 +52,11 @@ By now, documentation is done via example files. Besides the special examples fi
 there exist some example files which give a general overview of how to use conexp-clj. Those files
 cover
 
- * [basics](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/01-basics.clj)
- * [formal contexts](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/02-contexts.clj)
- * [lattices](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/03-lattices.clj)
- * [IO](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/04-io.clj)
- * [implications](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/05-implications.clj)
+ * [basics](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/01-basics.clj;hb=master)
+ * [formal contexts](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/02-contexts.clj;hb=master)
+ * [lattices](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/03-lattices.clj;hb=master)
+ * [IO](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/04-io.clj;hb=master)
+ * [implications](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/05-implications.clj;hb=master)
 
 They have been written by Sebastian Böhm.
 
@@ -70,21 +70,21 @@ For finding functions you may find useful, you can use `find-doc`
 
 ### Further Examples
 
- * [Attribute Exploration](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/exploration.clj),
+ * [Attribute Exploration](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/exploration.clj)
    a demonstration how attribute exploration can be done in conexp-clj.
- * [Fuzzy FCA](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/fuzzy.clj), a sample file to
-   show how to use fuzzy FCA with conexp-clj
- * [Factor Analysis](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/factor-analysis.clj),
+ * [Fuzzy FCA](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/fuzzy.clj),
+   a sample file to show how to use fuzzy FCA with conexp-clj
+ * [Factor Analysis](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/factor-analysis.clj),
    a small program that demonstrates how to use conexp-clj for factorizing contexts
- * [Formal Contexts for Implications](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/implication-closure.clj),
+ * [Formal Contexts for Implications](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/implication-closure.clj),
    computing a context for a set of implications
  * A
-   [Formal Context of Functions](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/function-context.clj),
+   [Formal Context of Functions](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/function-context.clj),
    see the paper by Artem Revenko and Sergej Kuznetzov for the CLA2010
- * [Permutations as Formal Context](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/permutation-context.clj),
+ * [Permutations as Formal Context](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/permutation-context.clj),
    computes a context whose concept lattice is isomorphic to the lattice of permutations on the set
    \{0,...,n\}.
- * [Tamari Lattice](http://www.math.tu-dresden.de/~borch/conexp-clj/examples/tamari-lattice.clj),
+ * [Tamari Lattice](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/tamari-lattice.clj),
    the lattice of all bracketings of n+1 symbols (a.k.a. the Tamari Lattice of parameter n)
 
 ### To come
