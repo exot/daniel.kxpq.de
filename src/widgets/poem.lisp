@@ -79,10 +79,16 @@
    (poem-list :type list)))
 
 (defmethod initialize-instance :after ((obj poem-selector) &key &allow-other-keys)
+  (setf (slot-value obj 'poem-list)
+        (mapcar (lambda (poem)
+                  (make-foldable-poem-widget obj
+                                             poem
+                                             (poem-selector-poem-widget-class obj)
+                                             :folded))
+                (find-persistent-objects *store* 'poem)))
   (setf (on-demand-lookup-function obj)
         (lambda (obj tokens)
-          (let* ((poems-list (find-persistent-objects *store* 'poem))
-                 (widget     (make-instance 'widget)))
+          (let ((widget (make-instance 'widget)))
             (setf (widget-children widget)
                   (mapcar #'make-widget
                           (list
@@ -91,18 +97,14 @@
                                     (:h2 "Selected Poems")
                                     (:p "Here you may find a very personal collection of poems I like.")
                                     (:p "When I find some more time, you may also select poems by
-                                        several criteria like author, title, contains...  But this
-                                        needs to be implemented.  Right now, you just see all of
-                                        them."))
+                                         several criteria like author, title, contains...  But this
+                                         needs to be implemented.  Right now, you just see all of
+                                         them."))
                                   (:hr)))
                            (mapcan (lambda (poem)
-                                     (list
-                                      (make-foldable-poem-widget widget
-                                                                 poem
-                                                                 (poem-selector-poem-widget-class obj)
-                                                                 :folded)
-                                      (f_% (with-html (:hr)))))
-                                   poems-list))))
+                                     (list poem
+                                           (f_% (with-html (:hr)))))
+                                   (slot-value obj 'poem-list)))))
             (values widget tokens nil :no-cache)))))
 
 ;;;
