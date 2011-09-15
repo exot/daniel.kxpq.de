@@ -29,6 +29,7 @@
     :public-files-path #P"/home/borch/Documents/lang/lisp/cl/source/website/pub/"
     :autostart nil
     :debug t
+    :html-indent-p t
     )
 
 ;;; Top level start & stop scripts
