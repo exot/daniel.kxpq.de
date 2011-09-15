@@ -36,28 +36,27 @@
   (ecase (mode widget)
     (:show
      (with-html
-       (:div :style "text-align:right"
+       (:div :class "dismiss-button"
          (render-link (f_% (setf (mode widget) :folded))
                       "Dismiss"))
        (render-widget (poem-widget widget))))
     (:folded
      (let ((poem (poem (poem-widget widget))))
        (with-html
-         (:div :class "folded-poem"
-           (render-link (f_% (setf (mode widget) :show))
-                        (or (poem-title poem)
-                            (concatenate
-                             'string
-                             "["
-                             (subseq (poem-body poem)
-                                     0
-                                     (or (position #\Newline (poem-body poem))
-                                         (length (poem-body poem))))
-                             "]")))
-           " by "
-           (str (poem-author poem))))))))
+         (render-link (f_% (setf (mode widget) :show))
+                      (or (poem-title poem)
+                          (concatenate
+                           'string
+                           "["
+                           (subseq (poem-body poem)
+                                   0
+                                   (or (position #\Newline (poem-body poem))
+                                       (length (poem-body poem))))
+                           "]")))
+         " by "
+         (str (poem-author poem)))))))
 
-(defun make-foldable-poem-widget (main-widget poem poem-widget-class mode)
+(defun make-foldable-poem-widget (poem poem-widget-class mode)
   (let ((widget (make-instance 'foldable-poem-widget
                                :poem-widget (make-instance poem-widget-class
                                                            :poem poem)
@@ -74,9 +73,8 @@
 (defmethod render-widget-body ((obj poem-selector) &rest args)
   (declare (ignore args))
   (with-html
-    (:div :class "poem-selector"
-      (:h2 "Selected Poems")
-      (:p "Here you may find a very personal collection of poems I like."))))
+    (:h2 "Selected Poems")
+    (:p "Here you may find a very personal collection of poems I like.")))
 
 (defmethod render-widget-children ((obj poem-selector) &rest args)
   (with-html (:hr))
@@ -88,8 +86,7 @@
 (defmethod initialize-instance :after ((obj poem-selector) &key &allow-other-keys)
   (setf (widget-children obj :poems)
         (mapcar (lambda (poem)
-                  (make-foldable-poem-widget obj
-                                             poem
+                  (make-foldable-poem-widget poem
                                              (poem-selector-poem-widget-class obj)
                                              :folded))
                 (find-persistent-objects *store* 'poem)))
