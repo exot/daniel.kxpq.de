@@ -205,3 +205,25 @@ div.poem-author
     padding-top:2ex;
     text-align:right;
 }
+
+div.dismiss-button
+{
+    text-align:right;
+}
+
+div.folded-poem
+{
+    display:table;
+}
+
+div.folded-poem div.poem-description
+{
+    display:table-cell;
+    width:100%;
+}
+
+div.folded-poem div.show-button
+{
+    display:table-cell;
+    text-align:right;
+}

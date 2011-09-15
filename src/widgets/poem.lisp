@@ -38,23 +38,27 @@
      (with-html
        (:div :class "dismiss-button"
          (render-link (f_% (setf (mode widget) :folded))
-                      "Dismiss"))
+                      "Hide"))
        (render-widget (poem-widget widget))))
     (:folded
      (let ((poem (poem (poem-widget widget))))
        (with-html
-         (render-link (f_% (setf (mode widget) :show))
-                      (or (poem-title poem)
-                          (concatenate
-                           'string
-                           "["
-                           (subseq (poem-body poem)
-                                   0
-                                   (or (position #\Newline (poem-body poem))
-                                       (length (poem-body poem))))
-                           "]")))
-         " by "
-         (str (poem-author poem)))))))
+         (:div :class "folded-poem"
+           (:div :class "poem-description"
+             (str (or (and (poem-title poem)
+                           (concatenate 'string "«" (poem-title poem) "»"))
+                      (concatenate 'string
+                                   "["
+                                   (subseq (poem-body poem)
+                                           0
+                                           (or (position #\Newline (poem-body poem))
+                                               (length (poem-body poem))))
+                                   "]")))
+             " by "
+             (str (poem-author poem)))
+           (:div :class "show-button"
+             (render-link (f_% (setf (mode widget) :show))
+                          "Show"))))))))
 
 (defun make-foldable-poem-widget (poem poem-widget-class mode)
   (let ((widget (make-instance 'foldable-poem-widget
