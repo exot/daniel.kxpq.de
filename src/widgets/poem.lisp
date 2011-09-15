@@ -33,7 +33,6 @@
          :type     (or :show :folded))))
 
 (defmethod render-widget-body ((widget foldable-poem-widget) &key &allow-other-keys)
-  (print (mode widget))
   (ecase (mode widget)
     (:show
      (with-html
