@@ -35,7 +35,7 @@
 
 (defun start-website (&rest args)
   "Starts the application by calling 'start-weblocks' with appropriate arguments."
-  (apply #'start-weblocks args)
+  (apply #'start-weblocks :port 52341 args)
   (start-webapp 'website))
 
 (defun stop-website ()
