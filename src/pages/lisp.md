@@ -25,3 +25,6 @@ This webpage is made with weblocks (yay!) and here are some random thoughts abou
   course the right thing to do, because otherwise you could just mark the root widget as dirty.
   However, it might also may be problematic if the widget must be repainted, see poems.  How to
   avoid this?
+
+* Do not override `render-widget` but `render-widget-body` and `render-widget-children`.  Otherwise
+  updating via AJAX (and even without) may not work correctly.
