@@ -34,9 +34,9 @@
          :type     (or :show :folded))))
 
 (defmethod render-widget ((widget foldable-poem-widget) &key &allow-other-keys)
+  (print (mode widget))
   (ecase (mode widget)
     (:show
-     (print (mode widget))
      (with-html
        (:div :class "widget unfolded-poem"
          (:div :style "text-align:right"
@@ -44,7 +44,6 @@
                         "Dismiss"))
          (render-widget (poem-widget widget)))))
     (:folded
-     (print (mode widget))
      (let ((poem (poem (poem-widget widget))))
        (with-html
          (:div :class "widget folded-poem"
@@ -75,11 +74,24 @@
 (defwidget poem-selector (on-demand-selector)
   ((poem-widget-class :accessor poem-selector-poem-widget-class
                       :initarg  :poem-widget-class
-                      :type     (or class symbol))
-   (poem-list :type list)))
+                      :type     (or class symbol))))
+
+(defmethod render-widget-body ((obj poem-selector) &rest args)
+  (declare (ignore args))
+  (with-html
+    (:div :class "poem-selector"
+          (:h2 "Selected Poems")
+          (:p "Here you may find a very personal collection of poems I like."))))
+
+(defmethod render-widget-children ((obj poem-selector) &rest args)
+  (with-html (:hr))
+  (mapc (lambda (child)
+            (apply #'render-widget child args)
+            (with-html (:hr)))
+        (widget-children obj :poems)))
 
 (defmethod initialize-instance :after ((obj poem-selector) &key &allow-other-keys)
-  (setf (slot-value obj 'poem-list)
+  (setf (widget-children obj :poems)
         (mapcar (lambda (poem)
                   (make-foldable-poem-widget obj
                                              poem
@@ -88,24 +100,8 @@
                 (find-persistent-objects *store* 'poem)))
   (setf (on-demand-lookup-function obj)
         (lambda (obj tokens)
-          (let ((widget (make-instance 'widget)))
-            (setf (widget-children widget)
-                  (mapcar #'make-widget
-                          (list
-                           (f_% (with-html
-                                  (:div :class "poem-selector"
-                                    (:h2 "Selected Poems")
-                                    (:p "Here you may find a very personal collection of poems I like.")
-                                    (:p "When I find some more time, you may also select poems by
-                                         several criteria like author, title, contains...  But this
-                                         needs to be implemented.  Right now, you just see all of
-                                         them."))
-                                  (:hr)))
-                           (mapcan (lambda (poem)
-                                     (list poem
-                                           (f_% (with-html (:hr)))))
-                                   (slot-value obj 'poem-list)))))
-            (values widget tokens nil :no-cache)))))
+          (declare (ignore obj))
+          (values (make-widget "") tokens nil :no-cache))))
 
 ;;;
 
