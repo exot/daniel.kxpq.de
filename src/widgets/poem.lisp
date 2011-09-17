@@ -72,7 +72,20 @@
 (defwidget poem-selector (on-demand-selector)
   ((poem-widget-class :accessor poem-selector-poem-widget-class
                       :initarg  :poem-widget-class
-                      :type     (or class symbol))))
+                      :type     (or class symbol))
+   (selection         :type     list)))
+
+(defun select-poems-by-tokens (selector tokens)
+  (when (or (slot-boundp selector 'selection)
+            (not (equalp tokens (slot-value selector 'selection))))
+    (setf (widget-children selector :poems)
+          (mapcar (lambda (poem)
+                    (make-foldable-poem-widget poem
+                                               (poem-selector-poem-widget-class selector)
+                                               :folded))
+                  (find-persistent-objects *store* 'poem)))
+    (setf (slot-value selector 'selection)
+          tokens)))
 
 (defmethod render-widget-body ((obj poem-selector) &rest args)
   (declare (ignore args))
@@ -88,15 +101,9 @@
         (widget-children obj :poems)))
 
 (defmethod initialize-instance :after ((obj poem-selector) &key &allow-other-keys)
-  (setf (widget-children obj :poems)
-        (mapcar (lambda (poem)
-                  (make-foldable-poem-widget poem
-                                             (poem-selector-poem-widget-class obj)
-                                             :folded))
-                (find-persistent-objects *store* 'poem)))
   (setf (on-demand-lookup-function obj)
         (lambda (obj tokens)
-          (declare (ignore obj))
+          (select-poems-by-tokens obj tokens)
           (values (make-widget "") tokens nil :no-cache))))
 
 ;;;
