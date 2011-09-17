@@ -30,6 +30,22 @@
                                             :stream s))))
        (princ html *weblocks-output-stream*)))))
 
+;;; Record time when database is changed
+
+(defvar *last-store-modification-time* (get-universal-time))
+
+(defmethod persist-object :after ((store (eql *store*)) obj &key &allow-other-keys)
+  (declare (ignore obj))
+  (setf *last-store-modification-time* (get-universal-time)))
+
+(defmethod delete-persistent-object :after ((store (eql *store*)) obj)
+  (declare (ignore obj))
+  (setf *last-store-modification-time* (get-universal-time)))
+
+(defmethod delete-persistent-object-by-id :after ((store (eql *store*)) class-name id)
+  (declare (ignore class-name id))
+  (setf *last-store-modification-time* (get-universal-time)))
+
 ;;;
 
 nil
