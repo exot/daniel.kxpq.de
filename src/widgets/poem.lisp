@@ -76,6 +76,9 @@
    (selection         :type     list)))
 
 (let ((store-changed nil))
+  ;; this may not work if two users view for the same time
+  ;; better make this a property if the poem-selector itself
+  ;; maybe using get-universal-time
 
   (defun select-poems-by-tokens (selector tokens)
     (when (or store-changed
