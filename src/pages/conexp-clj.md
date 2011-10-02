@@ -1,26 +1,41 @@
-This is (a [clone](http://www.math.tu-dresden.de/~borch/conexp-clj) of) the homepage of conexp-clj,
-a [Clojure][]-rewrite of [Conexp][].
+## conexp-clj
+
+`conexp-clj` is an attempt to provide a general purpose tool for
+[Formal Concept Analysis](/math/fca).  As an original attempt to extend [ConExp][] with new
+functionalities it is written completely from scratch in [Clojure][].
 
 [Clojure]: http://www.clojure.org (Clojure)
-[Conexp]: http://conexp.sf.net (Concept Explorer)
+[ConExp]: http://conexp.sf.net (Concept Explorer)
 
 **WARNING**: This software is in alpha stage. Expect the unexpected while using it.
 
-### Sources
+* * *
 
-can be found [here][conexp-clj-src]. Note that you need [Leiningen][lein] to use them properly.
+### News
+
+* 2011-10-02<br/>
+  Moved the website of `conexp-clj` from the math account to kxpq.de and restructured it.
+
+* * *
+
+### Development
+
+[Sources][conexp-clj-src] are available online, licensed under the Eclipse Public License -v 1.0,
+same as Clojure.  Note that you need [Leiningen][lein] for development.
 
 [conexp-clj-src]: http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=summary
   (conexp-clj source code)
 [lein]: http://github.com/technomancy/leiningen
   (leiningen, a bulding tool for clojure)
 
-### Binary Development Snapshot
+Besides that, binary snapshots are available, namely
 
  * [Last tagged release](http://www.math.tu-dresden.de/~borch/conexp-clj/conexp-clj.zip) (0.0.6-alpha)
  * [Current snapshot](http://www.math.tu-dresden.de/~borch/conexp-clj/conexp-clj-SNAPSHOT.zip)
 
 Note that the snapshot release might have some incompatible changes to the last tagged one.
+
+### Installation
 
 To install conexp-clj, download the zip-file you want, unzip and follow the instructions in the
 INSTALL file. To start just call the appropriate script under conexp-clj/bin, i.e. for Linux this is
@@ -68,7 +83,7 @@ For finding functions you may find useful, you can use `find-doc`
 
     (find-doc "Whatever you may find useful")
 
-### Further Examples
+Some more examples:
 
  * [Attribute Exploration](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/exploration.clj)
    a demonstration how attribute exploration can be done in conexp-clj.
@@ -86,10 +101,3 @@ For finding functions you may find useful, you can use `find-doc`
    \{0,...,n\}.
  * [Tamari Lattice](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/tamari-lattice.clj),
    the lattice of all bracketings of n+1 symbols (a.k.a. the Tamari Lattice of parameter n)
-
-### To come
-
- * More Tests and Documentation
- * More Context IO Formats (all supported by FCAStone)
- * GUI (maybe)
-
