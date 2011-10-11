@@ -14,7 +14,7 @@
   :description "website"
   :depends-on (:weblocks
                :cl-prevalence
-               :cl-markdown)
+               :trivial-shell)
   :components ((:file "website")
                (:module conf
                 :depends-on ("website")

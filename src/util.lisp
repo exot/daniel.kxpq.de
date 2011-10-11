@@ -19,16 +19,22 @@
 
 (defun html-from-markdown (path)
   "Writes HTML output generated from the markdown file found in path."
-  (let* ((default-path (make-pathname :directory (append (pathname-directory (asdf-system-directory :website))
-                                                         (list "src" "pages"))))
-         (html nil))
-    (make-widget
-     (f_%
-       (unless html
-         (setf html (with-output-to-string (s)
-                      (cl-markdown:markdown (merge-pathnames default-path path)
-                                            :stream s))))
-       (princ html *weblocks-output-stream*)))))
+  (make-widget (let ((html nil))
+                 (f_%
+                   (if (not html)
+                       (multiple-value-bind (out err ret)
+                           (trivial-shell:shell-command
+                            (concatenate 'string
+                                         "cat src/pages/"
+                                         path
+                                         " | markdown-extra"))
+                         (if (not (zerop ret))
+                             (princ err *weblocks-output-stream*)
+                             (progn
+                               (setf html out)
+                               (princ html *weblocks-output-stream*))))
+                       (princ html *weblocks-output-stream*))))))
+
 
 ;;; Record time when database is changed
 

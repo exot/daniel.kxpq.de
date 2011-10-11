@@ -13,7 +13,7 @@ functionalities it is written completely from scratch in [Clojure][].
 
 ### News
 
-* 2011-10-02<br/>
+* 2011-10-02
   Moved the website of `conexp-clj` from the math account to kxpq.de and restructured it.
 
 * * *
