@@ -26,10 +26,6 @@
           (:img :src (make-webapp-public-file-uri "images/footer/lambda-lisp.png")
                 :alt "This page is made with Common Lisp."))
       (str "&nbsp;")
-      (:a :href "http://common-lisp.net/project/cl-markdown/"
-          (:img :src (make-webapp-public-file-uri "images/footer/cl-markdown.png")
-                :alt "Occasionally using CL-Markdown."))
-      (str "&nbsp;")
       (:a :href "http://www.catb.org/hacker-emblem/"
           (:img :src (make-webapp-public-file-uri "images/footer/hacker.png")
                 :alt "Thou hacking shall be beautiful.")))))
