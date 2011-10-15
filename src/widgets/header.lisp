@@ -8,9 +8,9 @@
                   :initarg :default-title
                   :type string
                   :initform "")
-   (title-list :accessor header-title-list
-               :type list
-               :initarg :title-list)))
+   (title-fn :accessor header-title-fn
+             :type function
+             :initarg :title-fn)))
 
 (defmethod initialize-instance :after ((header header) &key &allow-other-keys)
   (setf (on-demand-lookup-function header)
@@ -18,8 +18,7 @@
           (let ((title nil))
             (if (null tokens)
                 (setf title (header-default-title header))
-                (setf title (or (second (find-if (f_ (equalp (first _) (first tokens)))
-                                                 (header-title-list header)))
+                (setf title (or (funcall (header-title-fn header) (first tokens))
                                 (header-default-title header))))
             (values (make-widget
                      (f_% (with-html

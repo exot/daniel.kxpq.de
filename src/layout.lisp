@@ -36,11 +36,7 @@
   (make-widget (list
                 (make-instance 'header
                                :default-title "Daniel's Playground"
-                               :title-list '(("home"       "At Home")
-                                             ("math"       "All Math")
-                                             ("poems"      "Poems")
-                                             ("lisp"       "On Lisp")
-                                             ("conexp-clj" "Conexp in Clojure")))
+                               :title-fn #'identity)
                 (make-navigation "Main Menu"
                                  "home"       (make-home-page)
                                  "math"       (make-math-page)
