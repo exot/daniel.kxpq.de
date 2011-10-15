@@ -41,6 +41,7 @@
                                  "home"       (make-home-page)
                                  "math"       (make-math-page)
                                  "poems"      (make-poems-page)
+                                 "pensieve"   (make-pensieve-page)
                                  "lisp"       (make-common-lisp-page)
                                  "conexp-clj" (make-conexp-clj-page)))))
 
@@ -101,6 +102,23 @@
                                :view 'poem-table-view
                                :item-data-view 'poem-data-view
                                :item-form-view 'poem-form-view))))
+
+;;; Pensieve
+
+(defun make-pensieve-page ()
+  (make-instance 'on-demand-selector
+                 :lookup-function (lambda (selector tokens)
+                                    (declare (ignore selector))
+                                    (print tokens)
+                                    (values (if (or (null tokens)
+                                                    (string= (first tokens) "")
+                                                    (string= (first tokens) "main"))
+                                                (md "pensieve/main.md")
+                                                (md (concatenate 'string
+                                                                 "pensieve/" (first tokens) ".md"))) ;safe?
+                                            tokens
+                                            nil
+                                            nil))))
 
 ;;; Common Lisp
 
