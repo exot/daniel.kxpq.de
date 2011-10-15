@@ -60,9 +60,9 @@
                                          (render-widget (make-instance 'standard-poem-widget
                                                                        :poem *initial-poem*)))
                                        (:hr)
-                                       (render-widget (html-from-markdown "main.md"))))))
+                                       (render-widget (md "main.md"))))))
                          (cons "personal"
-                               (html-from-markdown "personal.md")))))
+                               (md "personal.md")))))
 
 ;;; Math
 
@@ -70,14 +70,14 @@
   (make-instance 'static-selector
                  :panes (list
                          (cons "main"
-                               (html-from-markdown "math.md"))
+                               (md "math.md"))
                          (cons "fca"
-                               (html-from-markdown "fca.md")))))
+                               (md "fca.md")))))
 
 ;;; conexp-clj
 
 (defun make-conexp-clj-page ()
-  (html-from-markdown "conexp-clj.md"))
+  (md "conexp-clj.md"))
 
 ;;; Poems
 
@@ -109,7 +109,7 @@
 ;;; Common Lisp
 
 (defun make-common-lisp-page ()
-  (html-from-markdown "lisp.md"))
+  (md "lisp.md"))
 
 ;;;
 

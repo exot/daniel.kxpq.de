@@ -17,7 +17,7 @@
     (:p :style "font-style:italic"
         "More to come")))
 
-(defun html-from-markdown (path)
+(defun md (path)
   "Writes HTML output generated from the markdown file found in path."
   (make-widget (let ((html nil))
                  (f_%
