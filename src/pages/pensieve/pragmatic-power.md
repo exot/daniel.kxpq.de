@@ -19,9 +19,9 @@ language Y, and in this case we may say that X is more powerful than Y (for this
 this programmer).
 
 So let us loosely define the *pragmatic power*.  Suppose a programming language X (without defining
-what actually a programming language is), a certain problem P and a certain programmer R.  Then the
-pragmatic power of X corresponds to the amount of work needed by R to formulate P (and its solution)
-in the language X.
+what actually a programming language is), a certain problem P and a certain programmer R.  Then we
+define:
+> The pragmatic power of X corresponds to the amount of work needed by R to solve P in X.
 
 This "definition" is by far formal, and it may be that it cannot be formalized, because it describes
 an inherently subjective matter -- the way programmers think.
@@ -77,11 +77,13 @@ this way.
 
 And even another thing can be oberserved for successful programming languages -- they are much more
 robust against the trends in mainstream programming.  The main example here is Lisp, which has
-survived not because of much money and a small, very special purpose community (like Fortran).  It
-has survived mostly because of its large pragmatic power for a lot of problem domains and for a lot
-of programmers.  With that it was able to survive the AI winter in the eighties and the decline in
-the ninties, and gains more and more attraction today, with a vast number of dialects around (Common
+survived not because of much money and mainly doing old-code-maintenance (like Fortran[^1]).  It has
+survived mostly because of its large pragmatic power for a lot of problem domains and for a lot of
+programmers.  With that it was able to survive the AI winter in the eighties and the decline in the
+ninties, and gains more and more attraction today, with a vast number of dialects around (Common
 Lisp, Scheme, Clojure, Arc, ...)
+
+[^1]: Yes, this is a provocation, which is a pure exaggeration.  However, it contains some truth.
 
 Note that programming languages designed by single persons may become programming languages designed
 by (quite large) groups of persons, and even commitees.  This happened to Java, Perl, Python and
