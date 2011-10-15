@@ -21,7 +21,8 @@ this programmer).
 So let us loosely define the *pragmatic power*.  Suppose a programming language X (without defining
 what actually a programming language is), a certain problem P and a certain programmer R.  Then we
 define:
-> The pragmatic power of X corresponds to the amount of work needed by R to solve P in X.
+> The pragmatic power of X corresponds to the reciprocal of the amount of work needed by R to solve
+> P in X.
 
 This "definition" is by far formal, and it may be that it cannot be formalized, because it describes
 an inherently subjective matter -- the way programmers think.
