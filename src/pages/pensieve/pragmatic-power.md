@@ -89,21 +89,21 @@ Lisp, Scheme, Clojure, Arc, ...)
 Note that programming languages designed by single persons may become programming languages designed
 by (quite large) groups of persons, and even commitees.  This happened to Java, Perl, Python and
 others.  But this does not necessarily mean that they become average programming language (at least
-as long not company is behind that blindly wants to make money with this language).  This is because
+as long no company is behind that blindly wants to make money with this language).  This is because
 the groups that design the language originated from the communities formed around thoses languages,
 and these people often share a great deal of common conceptions on how languages should look like.
-Moreover, so called the original developers remain as *benevolant dictators* in the communities and
-ensure that the language stays a language they like.  However, they may do this not from the
-standpoint of personal practical needs anymore but from the standpoint of personal taste.  That may
-be good, that may be bad, the future shall show.  But what can be seen today is that the evolution
-of progamming languages has gotten very close to the evolution of natural languages in this
-particular case: it evolves with the needs of their speakers.
+Moreover, the original developers remain as *benevolent dictators* in the communities and ensure
+that the language stays a language they like.  However, they may do this not from the standpoint of
+personal practical needs anymore but from the standpoint of personal taste.  That may be good, that
+may be bad, the future shall show.  But what can be seen today is that the evolution of progamming
+languages has gotten very close to the evolution of natural languages in this particular case: it
+evolves with the needs of their speakers.
 
 ## The End
 
 So, pragmatic power of programming languages is highly subjective and context dependent.  We all
 knew that before reading this essay.  But maybe we still tend to say that "X is dump, because it is
-not powerful enough" and may judge others by their use thereof.  Programming languages involes the
+not powerful enough" and may judge others by their use thereof.  Programming languages invole the
 personal taste of programmers, i.e. of humans, and judging taste is out of scope for everyone.  The
 only thing we may see is whether someone uses a language designed to please money or a language
 designed to reach personal perfection.
