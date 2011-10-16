@@ -41,8 +41,7 @@
                                  "home"       (make-home-page)
                                  "math"       (make-math-page)
                                  "poems"      (make-poems-page)
-                                 "pensieve"   (make-pensieve-page)
-                                 "conexp-clj" (make-conexp-clj-page)))))
+                                 "pensieve"   (make-pensieve-page)))))
 
 ;;; Home
 
@@ -64,16 +63,9 @@
 
 (defun make-math-page ()
   (make-instance 'static-selector
-                 :panes (list
-                         (cons "main"
-                               (md "math.md"))
-                         (cons "fca"
-                               (md "fca.md")))))
-
-;;; conexp-clj
-
-(defun make-conexp-clj-page ()
-  (md "conexp-clj.md"))
+                 :panes `(("main" ,(md "math.md"))
+                          ("fca"  ,(md "fca.md"))
+                          ("conexp-clj" ,(md "conexp-clj.md")))))
 
 ;;; Poems
 
