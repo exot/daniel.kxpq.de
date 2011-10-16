@@ -42,7 +42,6 @@
                                  "math"       (make-math-page)
                                  "poems"      (make-poems-page)
                                  "pensieve"   (make-pensieve-page)
-                                 "lisp"       (make-common-lisp-page)
                                  "conexp-clj" (make-conexp-clj-page)))))
 
 ;;; Home
@@ -119,11 +118,6 @@
                                             tokens
                                             nil
                                             nil))))
-
-;;; Common Lisp
-
-(defun make-common-lisp-page ()
-  (md "lisp.md"))
 
 ;;;
 
