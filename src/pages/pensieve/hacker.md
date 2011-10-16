@@ -1,6 +1,6 @@
+<div style="text-align:center" markdown="1">
 # The Hacker Manifesto
 
-<div style="text-align:center">
  by</br>
  +++The Mentor+++</br>
  Written January 8, 1986

@@ -108,7 +108,6 @@
   (make-instance 'on-demand-selector
                  :lookup-function (lambda (selector tokens)
                                     (declare (ignore selector))
-                                    (print tokens)
                                     (values (if (or (null tokens)
                                                     (string= (first tokens) "")
                                                     (string= (first tokens) "main"))
