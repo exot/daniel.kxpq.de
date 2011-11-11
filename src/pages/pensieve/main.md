@@ -5,6 +5,7 @@ them.  Here you can find the results.  They are not meant as absolute truth.  Th
 random thoughts.
 
 * [On the Pragmatic Power of Programming Languages](pensieve/pragmatic-power)
+* [Maintaining Understandability](pensieve/maintaining-understandability)
 
 Luckily, some people had thoughts I could have had before me, and moreover were able to express them
 in a way I never could have done.
@@ -14,4 +15,6 @@ in a way I never could have done.
   including
   * [Beating the Averages](http://paulgraham.com/avg.html)
   * [Revenge of the Nerds](http://paulgraham.com/icad.html)
+  * [Re: Revenge of the Nerds](http://paulgraham.com/icadmore.html)
+  * [Succinctness is Power](http://paulgraham.com/power.html)
   * [The Hundred-Year Language](http://paulgraham.com/hundred.html)
