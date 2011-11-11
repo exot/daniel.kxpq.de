@@ -23,7 +23,7 @@ functionalities it is written completely from scratch in [Clojure][].
 [Sources][conexp-clj-src] are available online, licensed under the Eclipse Public License -v 1.0,
 same as Clojure.  Note that you need [Leiningen][lein] for development.
 
-[conexp-clj-src]: http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=summary
+[conexp-clj-src]: https://github.com/exot/conexp-clj
   (conexp-clj source code)
 [lein]: http://github.com/technomancy/leiningen
   (leiningen, a bulding tool for clojure)
