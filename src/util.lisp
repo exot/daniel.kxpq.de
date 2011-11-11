@@ -1,11 +1,6 @@
 
 (in-package :website)
 
-;;; A Fix for Metatilities
-
-(setf (symbol-function 'metatilities:fixnump)
-      (symbol-function 'ccl:fixnump))
-
 ;;; Useful functions
 
 (defmethod make-widget ((obj list))
