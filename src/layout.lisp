@@ -36,7 +36,7 @@
   (make-widget (list
                 (make-instance 'header
                                :default-title "Daniel's Playground"
-                               :title-fn #'identity)
+                               :title-fn #'string-capitalize)
                 (make-navigation "Main Menu"
                                  "home"       (make-home-page)
                                  "math"       (make-math-page)
