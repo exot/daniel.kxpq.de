@@ -54,7 +54,7 @@
                                        (when *initial-poem*
                                          (render-widget (make-instance 'standard-poem-widget
                                                                        :poem *initial-poem*)))
-                                       (:hr)
+                                       (:br)
                                        (render-widget (md "main.md"))))))
                          (cons "personal"
                                (md "personal.md")))))
@@ -108,7 +108,7 @@
                                                                  "pensieve/" (first tokens) ".md"))) ;safe?
                                             tokens
                                             nil
-                                            nil))))
+                                            nil)))) ;don't cache
 
 ;;;
 
