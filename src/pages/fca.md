@@ -10,7 +10,8 @@ other knowledge representation formalisms like Description Logics.
 * ICFCA, the International Conference on Formal Concept Analysis
 * [CLA](http://cla.inf.upol.cz/), the International Conference on Concept Lattices and Their
   Applications
-* [ICCS](http://www.iccs.info), the International Conference on Conceptual Structures
+* [ICCS](http://www.iccs.info), the International Conference on Conceptual Structures (which covers
+  more than FCA)
 
 
 ### Useful Resources

@@ -7,4 +7,6 @@ Personally, one of the mathematical fields I'm mostly interested in is
 [Formal Concept Analysis](/math/fca/).  I've also written a [small program](/math/conexp-clj/) that
 can automate computations in FCA.
 
-*More to come*
+### Publications
+
+*to come*

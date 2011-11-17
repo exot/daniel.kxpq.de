@@ -63,9 +63,10 @@
 
 (defun make-math-page ()
   (make-instance 'static-selector
-                 :panes `(("main" ,(md "math.md"))
-                          ("fca"  ,(md "fca.md"))
-                          ("conexp-clj" ,(md "conexp-clj.md")))))
+                 :panes (list
+                         (cons "main"       (md "math.md"))
+                         (cons "fca"        (md "fca.md"))
+                         (cons "conexp-clj" (md "conexp-clj.md")))))
 
 ;;; Poems
 
