@@ -26,7 +26,7 @@ Don't Invent Data
   examples to show their usefulness.  However, most often those examples are so artificial that one
   hardly believes that *any* algorithms is even necessary to examine it.  And artificial example can
   never show the usefulness of a new algorithm when applied to real data.  That sounds much too
-  obvious to be generally accepted.  Always follow the rule of *Don't Invent Data*!
+  obvious to be generally accepted, but the rule of thumb is quite simple: *Don't Invent Data*!
   
 Ubiquitous Distraction
 : When walking along the street one can constantly see people listing to music, playing with their

@@ -13,6 +13,11 @@ functionalities it is written completely from scratch in [Clojure][].
 
 ### News
 
+* 2011-11-25  
+  Separated implementation of Felix's exploration algorithm for EL into its
+  [own](https://github.com/exot/EL-exploration) repository.
+* 2011-11-25  
+  Moved code to github (some time ago)
 * 2011-10-02  
   Moved the website of `conexp-clj` from the math account to kxpq.de and restructured it.
 
