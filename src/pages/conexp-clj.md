@@ -12,7 +12,7 @@ functionalities it is written completely from scratch in [Clojure][].
 * * *
 
 ### News
-
+  
 * 2011-11-25  
   Separated implementation of Felix's exploration algorithm for EL into its
   [own](https://github.com/exot/EL-exploration) repository.
@@ -35,8 +35,8 @@ same as Clojure.  Note that you need [Leiningen][lein] for development.
 
 Besides that, binary snapshots are available, namely
 
- * [Last tagged release](http://www.math.tu-dresden.de/~borch/conexp-clj/conexp-clj.zip) (0.0.6-alpha)
- * [Current snapshot](http://www.math.tu-dresden.de/~borch/conexp-clj/conexp-clj-SNAPSHOT.zip)
+ * [Last tagged release](https://github.com/downloads/exot/conexp-clj/conexp-clj-0.0.6.zip) (0.0.6-alpha)
+ * [Current snapshot](https://github.com/downloads/exot/conexp-clj/conexp-clj-0.0.7-SNAPSHOT.zip)
 
 Note that the snapshot release might have some incompatible changes to the last tagged one.
 
