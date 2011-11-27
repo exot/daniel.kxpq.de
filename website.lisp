@@ -28,7 +28,7 @@
     :ignore-default-dependencies nil
     :public-files-path #P"/home/borch/Documents/lang/lisp/cl/source/website/pub/"
     :autostart nil
-    :debug nil
+    :debug t
     :html-indent-p t
     )
 
