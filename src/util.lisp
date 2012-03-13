@@ -1,6 +1,10 @@
 
 (in-package :website)
 
+;;;
+
+(setf (gethash nil hunchentoot::*mime-type-hash*) "text/plain")
+
 ;;; Useful functions
 
 (defmethod make-widget ((obj list))
