@@ -45,12 +45,12 @@ Note that the snapshot release might have some incompatible changes to the last 
 To install conexp-clj, download the zip-file you want, unzip and follow the instructions in the
 INSTALL file. To start just call the appropriate script under conexp-clj/bin, i.e. for Linux this is
 
-    conexp-clj/bin/conexp-clj.sh
+    ./conexp-clj/bin/conexp-clj.sh
 
 and if you want to start the gui (which is experimental and not yet finished by now (when will a gui
 be finished at all?)), call the script with `--gui`:
 
-    conexp-clj/bin/conexp-clj.sh --gui
+    ./conexp-clj/bin/conexp-clj.sh --gui
 
 ### Features
 
