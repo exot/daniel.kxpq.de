@@ -13,6 +13,8 @@ functionalities it is written completely from scratch in [Clojure][].
 
 ### News
   
+* 2012-03-21  
+  Updating website to point to [github repository](http://github.com/exot/conexp-clj).
 * 2011-11-25  
   Separated implementation of Felix's exploration algorithm for EL into its
   [own](https://github.com/exot/EL-exploration) repository.
@@ -45,12 +47,16 @@ Note that the snapshot release might have some incompatible changes to the last 
 To install conexp-clj, download the zip-file you want, unzip and follow the instructions in the
 INSTALL file. To start just call the appropriate script under conexp-clj/bin, i.e. for Linux this is
 
-    ./conexp-clj/bin/conexp-clj.sh
+~~~
+./conexp-clj/bin/conexp-clj.sh
+~~~
 
 and if you want to start the gui (which is experimental and not yet finished by now (when will a gui
 be finished at all?)), call the script with `--gui`:
 
-    ./conexp-clj/bin/conexp-clj.sh --gui
+~~~
+./conexp-clj/bin/conexp-clj.sh --gui
+~~~
 
 ### Features
 
@@ -72,37 +78,41 @@ By now, documentation is done via example files. Besides the special examples fi
 there exist some example files which give a general overview of how to use conexp-clj. Those files
 cover
 
- * [basics](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/01-basics.clj;hb=master)
- * [formal contexts](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/02-contexts.clj;hb=master)
- * [lattices](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/03-lattices.clj;hb=master)
- * [IO](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/04-io.clj;hb=master)
- * [implications](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;f=doc/examples/05-implications.clj;hb=master)
+ * [basics](https://github.com/exot/conexp-clj/blob/master/doc/examples/01-basics.clj)
+ * [formal contexts](https://github.com/exot/conexp-clj/blob/master/doc/examples/02-contexts.clj)
+ * [lattices](https://github.com/exot/conexp-clj/blob/master/doc/examples/03-lattices.clj)
+ * [IO](https://github.com/exot/conexp-clj/blob/master/doc/examples/04-io.clj)
+ * [implications](https://github.com/exot/conexp-clj/blob/master/doc/examples/05-implications.clj)
 
 They have been written by Sebastian Böhm.
 
 Additionally, for general help on a function f, you can use the clojure function `doc` with
 
-    (doc f)
+~~~
+(doc f)
+~~~
 
 For finding functions you may find useful, you can use `find-doc`
 
-    (find-doc "Whatever you may find useful")
+~~~
+(find-doc "Whatever you may find useful")
+~~~
 
 Some more examples:
 
- * [Attribute Exploration](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/exploration.clj)
+ * [Attribute Exploration](https://github.com/exot/conexp-clj/blob/master/doc/examples/exploration.clj)
    a demonstration how attribute exploration can be done in conexp-clj.
- * [Fuzzy FCA](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/fuzzy.clj),
+ * [Fuzzy FCA](https://github.com/exot/conexp-clj/blob/master/doc/examples/fuzzy.clj),
    a sample file to show how to use fuzzy FCA with conexp-clj
- * [Factor Analysis](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/factor-analysis.clj),
+ * [Factor Analysis](https://github.com/exot/conexp-clj/blob/master/doc/examples/factor-analysis.clj),
    a small program that demonstrates how to use conexp-clj for factorizing contexts
- * [Formal Contexts for Implications](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/implication-closure.clj),
+ * [Formal Contexts for Implications](https://github.com/exot/conexp-clj/blob/master/doc/examples/implication-closure.clj),
    computing a context for a set of implications
  * A
-   [Formal Context of Functions](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/function-context.clj),
+   [Formal Context of Functions](https://github.com/exot/conexp-clj/blob/master/doc/examples/function-context.clj),
    see the paper by Artem Revenko and Sergej Kuznetzov for the CLA2010
- * [Permutations as Formal Context](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/permutation-context.clj),
+ * [Permutations as Formal Context](https://github.com/exot/conexp-clj/blob/master/doc/examples/permutation-context.clj),
    computes a context whose concept lattice is isomorphic to the lattice of permutations on the set
    \{0,...,n\}.
- * [Tamari Lattice](http://www.math.tu-dresden.de/extern/cgi-bin/algebra/borch/gitweb.cgi?p=clojure-conexp.git;a=blob;hb=master;f=doc/examples/tamari-lattice.clj),
+ * [Tamari Lattice](https://github.com/exot/conexp-clj/blob/master/doc/examples/tamari-lattice.clj),
    the lattice of all bracketings of n+1 symbols (a.k.a. the Tamari Lattice of parameter n)

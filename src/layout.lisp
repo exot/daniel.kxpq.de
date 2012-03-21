@@ -39,6 +39,7 @@
                                :title-fn #'string-capitalize)
                 (make-navigation "Main Menu"
                                  "home"       (make-home-page)
+                                 "me"         (md "personal.md")
                                  "math"       (make-math-page)
                                  "poems"      (make-poems-page)
                                  "pensieve"   (make-pensieve-page)))))
@@ -46,18 +47,11 @@
 ;;; Home
 
 (defun make-home-page ()
-  (make-instance 'static-selector
-                 :panes (list
-                         (cons "main"
-                               (make-widget
-                                (f_% (with-html
-                                       (when *initial-poem*
-                                         (render-widget (make-instance 'standard-poem-widget
-                                                                       :poem *initial-poem*)))
-                                       (:br)
-                                       (render-widget (md "main.md"))))))
-                         (cons "personal"
-                               (md "personal.md")))))
+  (make-widget
+   (f_% (with-html
+          (when *initial-poem*
+            (render-widget (make-instance 'standard-poem-widget
+                                          :poem *initial-poem*)))))))
 
 ;;; Math
 
