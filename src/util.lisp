@@ -3,7 +3,7 @@
 
 ;;;
 
-(setf (gethash nil hunchentoot::*mime-type-hash*) "text/plain")
+(setf (gethash "lisp" hunchentoot::*mime-type-hash*) "text/plain; charset=utf-8")
 
 ;;; Useful functions
 
