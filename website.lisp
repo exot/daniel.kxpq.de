@@ -21,7 +21,7 @@
 
 ;;; A macro that generates a class or this webapp
 
-(defparameter *website-name* "Seeking Beauty")
+(defparameter *website-name* "Reaching for the Stars")
 
 (defwebapp website
     :prefix "/"
