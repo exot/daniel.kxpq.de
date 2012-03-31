@@ -32,6 +32,8 @@
     :autostart nil
     :debug t
     :html-indent-p t
+    :dependencies  '((:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+                     (:script "mathjax"))
     )
 
 ;;; Top level start & stop scripts

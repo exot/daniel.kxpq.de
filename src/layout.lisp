@@ -69,6 +69,10 @@
             (render-widget (make-instance 'standard-poem-widget
                                           :poem *initial-poem*)))))))
 
+;;; Personal
+
+(setf (website-heading "me") "Daniel Borchmann")
+
 ;;; Math
 
 (defun make-math-page ()

@@ -1,5 +1,5 @@
-My name is Daniel Borchmann and I'm a PhD math student at the [Technische Universität Dresden][TUD]
-under supervision of [Prof. Bernhard Ganter][Bernhard].  The main focus of my work lies on
+I'm a PhD math student at the [Technische Universität Dresden][TUD] under supervision of
+[Prof. Bernhard Ganter][Bernhard].  The main focus of my work lies on
 [Formal Concept Analysis](/math/fca/).
 
 [TUD]: http://www.tu-dresden.de (TU Dresden)
@@ -15,5 +15,3 @@ Here are my public keys, for if you want to securely communicate with me.  I use
 [main public key](/pub/public.key) only from my personal computers, so it can be regarded as more
 secure, however reply times might be longer.  Use the [external public key](/pub/extern-public.key)
 if this is a problem.
-
-
