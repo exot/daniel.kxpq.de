@@ -30,13 +30,27 @@
           (:img :src (make-webapp-public-file-uri "images/footer/hacker.png")
                 :alt "Thou hacking shall be beautiful.")))))
 
+;;; Website Header
+
+(let ((headings (make-hash-table :test #'equal)))
+  (defun website-heading (key)
+    (multiple-value-bind (value present) (gethash key headings)
+      (if present
+          value
+          (string-capitalize key))))
+
+  (defun (setf website-heading) (value key)
+    (setf (gethash key headings) value))
+
+  nil)
+
 ;;; Starting point
 
 (defun make-start-page ()
   (make-widget (list
                 (make-instance 'header
-                               :default-title "Daniel's Playground"
-                               :title-fn #'string-capitalize)
+                               :default-title "home"
+                               :title-fn #'website-heading)
                 (make-navigation "Main Menu"
                                  "home"       (make-home-page)
                                  "me"         (md "personal.md")
@@ -45,6 +59,8 @@
                                  "pensieve"   (make-pensieve-page)))))
 
 ;;; Home
+
+(setf (website-heading "home") *website-name*)
 
 (defun make-home-page ()
   (make-widget
@@ -63,6 +79,8 @@
                          (cons "conexp-clj" (md "conexp-clj.md")))))
 
 ;;; Poems
+
+(setf (website-heading "poems") "Poetry")
 
 (defun make-poems-page ()
   (make-instance 'static-selector
@@ -90,6 +108,8 @@
                                :item-form-view 'poem-form-view))))
 
 ;;; Pensieve
+
+(setf (website-heading "pensieve") "Daniel's Pensieve")
 
 (defun make-pensieve-page ()
   (make-instance 'on-demand-selector

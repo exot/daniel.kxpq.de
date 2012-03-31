@@ -1,7 +1,6 @@
 My name is Daniel Borchmann and I'm a PhD math student at the [Technische Universität Dresden][TUD]
 under supervision of [Prof. Bernhard Ganter][Bernhard].  The main focus of my work lies on
-[Formal Concept Analysis](/math/fca/) with special treatment of Association Rules and connections to
-Description Logic setting.
+[Formal Concept Analysis](/math/fca/).
 
 [TUD]: http://www.tu-dresden.de (TU Dresden)
 [Bernhard]: http://tu-dresden.de/Members/bernhard.ganter (Prof. Bernhard Ganter)

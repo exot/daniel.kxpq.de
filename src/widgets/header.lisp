@@ -17,7 +17,7 @@
         (lambda (header tokens)
           (let ((title nil))
             (if (null tokens)
-                (setf title (header-default-title header))
+                (setf title (funcall (header-title-fn header) (header-default-title header)))
                 (setf title (or (funcall (header-title-fn header) (first tokens))
                                 (header-default-title header))))
             (values (make-widget

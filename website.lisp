@@ -21,9 +21,11 @@
 
 ;;; A macro that generates a class or this webapp
 
+(defparameter *website-name* "Seeking Beauty")
+
 (defwebapp website
     :prefix "/"
-    :name "Daniel's Playground"
+    :name *website-name*
     :init-user-session 'website::init-user-session
     :ignore-default-dependencies nil
     :public-files-path #P"/home/borch/Documents/lang/lisp/cl/source/website/pub/"
