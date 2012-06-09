@@ -55,10 +55,12 @@
   (unless *initial-poem*
     (setf *initial-poem* (find-poem-by-start "I went to the woods")))
   (setf (widget-children root)
-        (make-instance 'static-selector
-                       :panes (list
-                               (cons nil (make-start-page))
-                               (cons "impressum" (md "impressum.md"))))))
+        (make-instance 'on-demand-selector
+                       :lookup-function (lambda (selector tokens)
+                                          (declare (ignore selector))
+                                          (if (string= (first tokens) "impressum")
+                                            (values (md "impressum.md") tokens nil nil)
+                                            (values (make-start-page) nil tokens nil))))))
 
 ;;; Start page
 
