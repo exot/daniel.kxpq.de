@@ -41,7 +41,10 @@
 (defun start-website (&rest args)
   "Starts the application by calling 'start-weblocks' with appropriate arguments."
   (apply #'start-weblocks :port 52341 args)
-  (start-webapp 'website))
+  (start-webapp 'website)
+  (setf (hunchentoot:acceptor-access-log-destination *weblocks-server*) #p"access.log"
+        (hunchentoot:acceptor-message-log-destination *weblocks-server*) #p"message.log"))
+
 
 (defun stop-website ()
   "Stops the application by calling 'stop-weblocks'."
