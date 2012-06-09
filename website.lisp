@@ -19,7 +19,7 @@
 
 (export '(start-website stop-website))
 
-;;; A macro that generates a class or this webapp
+;;;
 
 (defparameter *website-name* "Reaching for the Stars")
 
@@ -44,7 +44,6 @@
   (start-webapp 'website)
   (setf (hunchentoot:acceptor-access-log-destination *weblocks-server*) #p"access.log"
         (hunchentoot:acceptor-message-log-destination *weblocks-server*) #p"message.log"))
-
 
 (defun stop-website ()
   "Stops the application by calling 'stop-weblocks'."
