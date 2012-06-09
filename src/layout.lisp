@@ -18,6 +18,8 @@
   (with-html
     (:div :class "footer"
           :style "color:white"
+      (:div :style "float:right"
+        (:a :href "/impressum" "Impressum"))
       (:a :href "http://common-lisp.net"
           (:img :src (make-webapp-public-file-uri "images/footer/lisp-lizard.png")
                 :alt "Public Projects for Common Lisp"))
@@ -46,6 +48,20 @@
 
 ;;; Starting point
 
+(defvar *initial-poem* nil
+  "Poem displayed on the first page.")
+
+(defun init-user-session (root)
+  (unless *initial-poem*
+    (setf *initial-poem* (find-poem-by-start "I went to the woods")))
+  (setf (widget-children root)
+        (make-instance 'static-selector
+                       :panes (list
+                               (cons nil (make-start-page))
+                               (cons "impressum" (md "impressum.md"))))))
+
+;;; Start page
+
 (defun make-start-page ()
   (make-widget (list
                 (make-instance 'header
@@ -55,7 +71,7 @@
                                  "home"       (make-home-page)
                                  "me"         (md "personal.md")
                                  "math"       (make-math-page)
-                                 "poems"      (make-poems-page)
+                                 ;"poems"      (make-poems-page)
                                  "pensieve"   (make-pensieve-page)))))
 
 ;;; Home

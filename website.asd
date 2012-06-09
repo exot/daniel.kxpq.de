@@ -39,6 +39,4 @@
                                            (:file "poem")
                                            (:file "login-maybe")))
                              (:file "layout"
-                              :depends-on (models views widgets))
-                             (:file "init-session"
-                              :depends-on ("layout"))))))
+                              :depends-on (models views widgets))))))

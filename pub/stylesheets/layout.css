@@ -166,6 +166,8 @@ div#main-menu div.menu
 .footer
 {
   margin-top: 1em;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
 }
 
 .footer p#system-info
