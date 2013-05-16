@@ -24,7 +24,7 @@
                      (f_% (with-html
                             (:div :style "display:table"
                              (:div :style "display:table-cell;width:100%"
-                               (:h1 (str title)))
+                              (:h1 (:div :class "mainheader" (str title))))
                              (:div :style "display:table-cell;"
                                 (:a :href "http://weblocks.viridian-project.de/"
                                     (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")

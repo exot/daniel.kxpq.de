@@ -10,8 +10,7 @@ random thoughts.
 : Maintaining code is one of the core aspects of programming.  This essays tries to connect
   maintainability of code to the pragmatic power of the programming language used.
 
-Luckily, some people had thoughts I could have had before me, and moreover were able to express them
-in a way I never could have done.
+I also like "random thoughts" of others:
 
 * [Mentor's Manifest](pensieve/hacker)
 * Some [essays](http://paulgraham.com/articles.html) by [Paul Graham](http://www.paulgraham.com),
@@ -21,3 +20,7 @@ in a way I never could have done.
   * [Re: Revenge of the Nerds](http://paulgraham.com/icadmore.html)
   * [Succinctness is Power](http://paulgraham.com/power.html)
   * [The Hundred-Year Language](http://paulgraham.com/hundred.html)
+* Posts by [Terence Tao](http://terrytao.wordpress.com/), including
+  * [There’s more to mathematics than rigour and proofs](http://terrytao.wordpress.com/career-advice/there’s-more-to-mathematics-than-rigour-and-proofs/)
+  * [Ask yourself dumb questions – and answer them!](http://terrytao.wordpress.com/career-advice/ask-yourself-dumb-questions-–-and-answer-them/)
+* [Code Smells](http://www.codinghorror.com/blog/2006/05/code-smells.html)

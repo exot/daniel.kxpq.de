@@ -1,9 +1,10 @@
-I'm a PhD math student at the [Technische Universität Dresden][TUD] under supervision of
-[Prof. Bernhard Ganter][Bernhard].  The main focus of my work lies on
-[Formal Concept Analysis](/math/fca/).
-
-[TUD]: http://www.tu-dresden.de (TU Dresden)
-[Bernhard]: http://tu-dresden.de/Members/bernhard.ganter (Prof. Bernhard Ganter)
+I am a scholarship holder of the Research Training Group
+[QuantLA](http://lat.inf.tu-dresden.de/quantla) under supervision of
+[Prof. Bernhard Ganter](http://tu-dresden.de/Members/bernhard.ganter/),
+[Prof. Franz Baader](http://lat.inf.tu-dresden.de/~baader/index-en.html) and
+[Prof. Gerd Brewka](http://www.informatik.uni-leipzig.de/~brewka/).  My PhD thesis is
+about [Formal Concept Analysis](/math/fca/) and [Description Logics](http://dl.kr.org) and
+may also involve some research on non-monotonic logics.
 
 I like programming, math (calculus and algebra), computer science, Linux, Unix,
 [GNU](http://www.gnu.org) and Open Source Software in general.  Apart from this, expressionistic

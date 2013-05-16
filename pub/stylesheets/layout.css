@@ -7,9 +7,7 @@ body
 
 div.page-wrapper
 {
-  max-width: 100em;
-  min-width: 60em;
-
+  width: 60em;
   margin: 0 auto;
   text-align: left;
 }
@@ -79,7 +77,7 @@ div#main-menu
 
 div#main-menu div.navigation-body
 {
-  margin-left: 16em;
+  margin-left: 12em;
 }
 
 div#main-menu div.menu
@@ -114,6 +112,15 @@ div#main-menu div.menu
   margin-right: 5px;
 /*  background: url(/weblocks-common/pub/images/page/hor_border_bottom.png) repeat-x top;*/
   overflow: hidden;
+}
+
+@font-face {
+  font-family: 'freemono';
+  src: url('http://daniel.kxpq.de/pub/fonts/FreeMono.otf');
+}
+
+.mainheader {
+  font-family: 'freemono';
 }
 
 .header
@@ -197,7 +204,7 @@ div.poem-title
 
 div.poem-body
 {
-    padding-left: 5em;
+    padding-left: 2em;
     text-align: left;
     white-space: pre;
 }

@@ -74,7 +74,8 @@
                                  "me"         (md "personal.md")
                                  "math"       (make-math-page)
                                  ;"poems"      (make-poems-page)
-                                 "pensieve"   (make-pensieve-page)))))
+                                 ;"pensieve"   (make-pensieve-page)
+                                 ))))
 
 ;;; Home
 
