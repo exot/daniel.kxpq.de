@@ -95,7 +95,6 @@
 (defmethod render-widget-body ((obj poem-selector) &rest args)
   (declare (ignore args))
   (with-html
-    (:h2 "Selected Poems")
     (:p "Here you may find a very personal collection of poems I like.")))
 
 (defmethod render-widget-children ((obj poem-selector) &rest args)

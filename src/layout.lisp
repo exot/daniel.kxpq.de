@@ -73,7 +73,7 @@
                                  "home"       (make-home-page)
                                  "me"         (md "personal.md")
                                  "math"       (make-math-page)
-                                 ;"poems"      (make-poems-page)
+                                 "poetry"     (make-poems-page)
                                  ;"pensieve"   (make-pensieve-page)
                                  ))))
 
@@ -103,7 +103,7 @@
 
 ;;; Poems
 
-(setf (website-heading "poems") "Poetry")
+(setf (website-heading "poetry") "Poetry")
 
 (defun make-poems-page ()
   (make-instance 'static-selector
@@ -120,7 +120,7 @@
 (defun make-poem-edit-page ()
   (make-widget (list
                 (f_% (with-html
-                       (:p (:a :href (make-webapp-uri "/poems/list")
+                       (:p (:a :href (make-webapp-uri "/poetry/list")
                                "List Poems"))))
                 (make-instance 'gridedit
                                :name 'poems-grid
