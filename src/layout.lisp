@@ -90,7 +90,7 @@
 
 ;;; Personal
 
-(setf (website-heading "me") "Daniel Borchmann")
+(setf (website-heading "me") "whoami")
 
 ;;; Math
 

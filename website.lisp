@@ -21,7 +21,7 @@
 
 ;;;
 
-(defparameter *website-name* "whoami")
+(defparameter *website-name* "Reaching for the Stars")
 
 (defwebapp website
     :prefix "/"
