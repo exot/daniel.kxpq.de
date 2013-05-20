@@ -30,7 +30,6 @@
     :ignore-default-dependencies nil
     :public-files-path #P"/home/borch/Documents/lang/lisp/cl/source/website/pub/"
     :autostart nil
-    :debug nil
     :html-indent-p t
     :dependencies  '((:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
                      (:script "mathjax"))
