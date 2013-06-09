@@ -1,8 +1,26 @@
+
+@font-face {
+  font-family: 'freemono';
+  src: url('http://daniel.kxpq.de/pub/fonts/FreeMono.otf');
+}
+
+@font-face {
+  font-family: 'freeserif';
+  src: url('http://daniel.kxpq.de/pub/fonts/FreeSerif.otf');
+}
+
+@font-face {
+  font-family: 'freesans';
+  src: url('http://daniel.kxpq.de/pub/fonts/FreeSans.otf');
+}
+
 body
 {
 /*  background: url(/weblocks-common/pub/images/page/background.png);*/
+  font-family: 'freesans', helvetica, sans-serif;
   text-align: center;
   background: #001D23;
+
 }
 
 div.page-wrapper
@@ -60,7 +78,7 @@ div#root, .dialog-body, .dialog h1
 div#root
 {
   padding: 3em;
-  min-height: 60em;
+  min-height: 60ex;
   background-color: white;
 }
 
@@ -114,13 +132,9 @@ div#main-menu div.menu
   overflow: hidden;
 }
 
-@font-face {
-  font-family: 'freemono';
-  src: url('http://daniel.kxpq.de/pub/fonts/FreeMono.otf');
-}
-
 .mainheader {
   font-family: 'freemono';
+  font-size: 170%;
 }
 
 .header
@@ -191,9 +205,9 @@ div#main-menu div.menu
 
 div.standard-poem-widget
 {
-    font-family: Georgia,Palatino,Palatino Linotype,FreeSerif,serif;
+    font-family: freeserif,Georgia,Palatino,Palatino Linotype,FreeSerif,serif;
     width:30em;
-    font-size:16px;
+    font-size:18px;
 }
 
 div.poem-title
