@@ -1,1 +1,1 @@
-/usr/bin/emacs -l ~/start-website.el
+/usr/bin/emacs -l start-website.el
