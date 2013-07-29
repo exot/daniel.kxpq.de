@@ -1,6 +1,7 @@
 
 (defpackage #:website
   (:use :cl
+        :weblocks-stores
         :weblocks
         :f-underscore
         :anaphora

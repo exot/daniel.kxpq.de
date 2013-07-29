@@ -12,7 +12,9 @@
   :author "Daniel"
   :licence "None"
   :description "website"
-  :depends-on (:weblocks
+  :depends-on (:weblocks-stores
+               :weblocks-memory
+               :weblocks
                :cl-prevalence
                :trivial-shell)
   :components ((:file "website")
