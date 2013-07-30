@@ -16,11 +16,11 @@
 
 body
 {
-/*  background: url(/weblocks-common/pub/images/page/background.png);*/
+  background-image: url(/pub/images/moon-from-earth.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   font-family: 'freesans', helvetica, sans-serif;
   text-align: center;
-  background: #001D23;
-
 }
 
 div.page-wrapper
@@ -79,7 +79,8 @@ div#root
 {
   padding: 3em;
   min-height: 60ex;
-  background-color: white;
+  background-image: url("/pub/images/transparent.png");
+
 }
 
 /* IE 6 specific hacks (has layout and min-height)*/
