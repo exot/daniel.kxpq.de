@@ -1,6 +1,6 @@
 (require 'slime)
 (slime-start :program "ccl"
-             :directory (expand-file-name "~/Documents/lang/lisp/cl/source/website/")
+             :directory (expand-file-name "~/lisp/cl/source/website/")
              :program-args '("-e" "(progn
                                      (ql:quickload :weblocks-memory)
                                      (ql:quickload :website)

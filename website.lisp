@@ -29,7 +29,7 @@
     :name *website-name*
     :init-user-session 'website::init-user-session
     :ignore-default-dependencies nil
-    :public-files-path #P"/home/borch/Documents/lang/lisp/cl/source/website/pub/"
+    :public-files-path #P"/home/borch/lisp/cl/source/website/pub/"
     :autostart nil
     :html-indent-p t
     :dependencies  '((:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
