@@ -17,8 +17,9 @@
 body
 {
   background-image: url(/pub/images/moon-from-earth.jpg);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: repeat;
   font-family: 'freesans', helvetica, sans-serif;
   text-align: center;
 }
@@ -188,8 +189,6 @@ div#main-menu div.menu
 .footer
 {
   margin-top: 1em;
-  padding-left: 3.5em;
-  padding-right: 3.5em;
 }
 
 .footer p#system-info
