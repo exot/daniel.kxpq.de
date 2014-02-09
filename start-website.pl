@@ -13,12 +13,14 @@ exit 0
   if LWP::UserAgent->new->get("http://daniel.kxpq.de")->code != 500;
 
 exit system("/usr/bin/emacs",
-            "--eval", <<HERE);
-(require 'slime)
-(slime-start :program "ccl"
-             :directory (expand-file-name "~/lisp/cl/source/website/")
-             :program-args '("-e" "(progn
-                                     (ql:quickload :website)
-                                     (funcall (read-from-string \"website:start-website\")))"))
+            "--eval", <<'HERE');
+(progn
+  (server-start)
+  (require 'slime)
+  (slime-start :program "ccl"
+               :directory (expand-file-name "/home/borch/lisp/cl/source/website/")
+               :program-args '("-e" "(progn
+                                       (ql:quickload :website)
+                                       (funcall (read-from-string \"website:start-website\")))")))
 HERE
 ;
