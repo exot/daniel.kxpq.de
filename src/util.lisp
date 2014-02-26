@@ -26,7 +26,7 @@
                             (concatenate 'string
                                          "cat src/pages/"
                                          path
-                                         " | markdown-extra"))
+                                         " | pandoc"))
                          (if (not (zerop ret))
                              (princ err *weblocks-output-stream*)
                              (progn
