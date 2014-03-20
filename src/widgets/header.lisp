@@ -26,7 +26,7 @@
                              (:div :style "display:table-cell;width:100%"
                               (:h1 (:div :class "mainheader" (str title))))
                              (:div :style "display:table-cell;"
-                                (:a :href "http://weblocks.viridian-project.de/"
+                                (:a :href "http://weblocks-framework.info/"
                                     (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")
                                           :alt "Made with Weblocks"
                                           :style "vertical-align:middle")))))))
