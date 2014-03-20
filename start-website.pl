@@ -12,15 +12,15 @@ use LWP::UserAgent;
 exit 0
   if LWP::UserAgent->new->get("http://daniel.kxpq.de")->code != 500;
 
-exit system("/usr/bin/emacs",
+chdir "/home/borch/lisp/cl/source/website";
+
+exit system("/home/borch/.local/bin/ccl",
             "--eval", <<'HERE');
-(progn
-  (server-start)
-  (require 'slime)
-  (slime-start :program "ccl"
-               :directory (expand-file-name "/home/borch/lisp/cl/source/website/")
-               :program-args '("-e" "(progn
-                                       (ql:quickload :website)
-                                       (funcall (read-from-string \"website:start-website\")))")))
+  (progn
+    (ql:quickload :website)
+    (funcall (read-from-string "website:start-website"))
+    (ql:quickload :swank)
+    (funcall (read-from-string "swank-loader:init"))
+    (funcall (read-from-string "swank:create-server") :port 50001 :dont-close t))
 HERE
 ;
