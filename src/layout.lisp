@@ -7,6 +7,7 @@
   (with-html
     (:div :class "pageheader"
           (:a :href "/home" "Home")
+          " ⋅ "
           (:a :href "/poetry" "Poetry"))))
 
 (defmethod render-page-body :after ((app website) rendered-html)
