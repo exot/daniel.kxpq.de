@@ -12,7 +12,7 @@ use LWP::UserAgent;
 exit 0
   if LWP::UserAgent->new->get("http://daniel.kxpq.de")->code != 500;
 
-chdir "/home/borch/lisp/cl/source/website";
+chdir "daniel.kxpq.de/";
 
 exit system("/home/borch/.local/bin/ccl",
             "--eval", <<'HERE');
