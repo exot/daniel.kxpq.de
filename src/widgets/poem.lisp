@@ -1,4 +1,3 @@
-
 (in-package :website)
 
 ;;;
@@ -37,7 +36,8 @@
     (:show
      (with-html
        (:div :class "dismiss-button"
-         (render-link (f_% (setf (mode widget) :folded))
+         (render-link (f_% (setf (mode widget) :folded)
+                           (mark-dirty widget))
                       "Hide"))
        (render-widget (poem-widget widget))))
     (:folded
@@ -57,7 +57,8 @@
              " by "
              (str (poem-author poem)))
            (:div :class "show-button"
-             (render-link (f_% (setf (mode widget) :show))
+             (render-link (f_% (setf (mode widget) :show)
+                               (mark-dirty widget))
                           "Show"))))))))
 
 (defun make-foldable-poem-widget (poem poem-widget-class mode)
