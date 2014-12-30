@@ -18,19 +18,13 @@ body
     font-family: Cardo, freeserif;
     text-align: center;
     font-size:22px;
+    margin: 0cm;
 }
 
 div.page-wrapper
 {
-  width: 45em;
-  margin: 0 auto;
+  margin: 0cm;
   text-align: left;
-}
-
-/* IE 6 specific hacks (has layout and min-width)*/
-* html div.page-wrapper
-{
-  width: 70em;
 }
 
 div.page-wrapper * div.navigation-body *
@@ -38,47 +32,13 @@ div.page-wrapper * div.navigation-body *
     max-width:50em;
 }
 
-.page-wrapper .page-extra-top-1,
-.dialog .dialog-extra-top-1
-{
-  height: 5px;
-  overflow: hidden;
-}
-
-.page-wrapper .page-extra-top-2,
-.dialog .dialog-extra-top-2
-{
-  height: 5px;
-  margin-top: -5px;
-  overflow: hidden;
-}
-
-.page-wrapper .page-extra-top-3,
-.dialog .dialog-extra-top-3
-{
-  height: 5px;
-  margin-top: -5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  overflow: hidden;
-}
-
-div#root, .dialog-body, .dialog h1
-{
-/*  border-left: 1px solid black; */
-/*  border-right: 1px solid black; */
-}
-
 div#root
 {
-    padding-top: 2em;
-    padding-bottom: 2em;
-    padding-left: 3em;
-    padding-right: 3em;
+    padding: 0cm;
+    margin: 2em;
     min-height: 45ex;
 }
 
-/* IE 6 specific hacks (has layout and min-height)*/
 * html div#root
 {
   height: 60em;
@@ -100,75 +60,26 @@ div#main-menu div.menu
   top: 0;
 }
 
-.page-wrapper .page-extra-bottom-1,
-.dialog .dialog-extra-bottom-1
-{
-  height: 5px;
-  overflow: hidden;
-}
-
-.page-wrapper .page-extra-bottom-2,
-.dialog .dialog-extra-bottom-2
-{
-  height: 5px;
-  margin-top: -5px;
-  overflow: hidden;
-}
-
-.page-wrapper .page-extra-bottom-3,
-.dialog .dialog-extra-bottom-3
-{
-  height: 5px;
-  margin-top: -5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  overflow: hidden;
-}
-
 .mainheader {
     font-family: freemono;
     font-weight: bold;
     font-size: 170%;
 }
 
-.header
+.pageheader
 {
-  margin-top: 0em;
-  margin-bottom: 2em;
-  margin-left: 0em;
-  margin-right: 0em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    border-bottom: 1px solid #EEE;
+    color: #CCC;
 }
 
-.header .extra-top-1
-{
-  height: 5px;
-  overflow: hidden;
-}
-
-.header .extra-top-2
-{
-  height: 5px;
-  margin-top: -5px;
-  overflow: hidden;
-}
-
-.header .extra-top-3
-{
-  height: 42px;
-  margin-left: 5px;
-}
-
-.header .extra-bottom-1
-{
-  height: 5px;
-  overflow: hidden;
-}
-
-.header .extra-bottom-2
-{
-  height: 5px;
-  margin-top: -5px;
-  overflow: hidden;
+.pageheader a {
+    color: #CCC;
+    text-decoration: none;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .footer
