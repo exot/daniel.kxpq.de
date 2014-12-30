@@ -15,10 +15,6 @@
 
 body
 {
-    background-image: url(/pub/images/moon-from-earth.jpg);
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: repeat;
     font-family: Cardo, freeserif;
     text-align: center;
     font-size:22px;
@@ -46,7 +42,6 @@ div.page-wrapper * div.navigation-body *
 .dialog .dialog-extra-top-1
 {
   height: 5px;
-/*  background: url(/weblocks-common/pub/images/page/top_left.png) no-repeat top left;*/
   overflow: hidden;
 }
 
@@ -55,7 +50,6 @@ div.page-wrapper * div.navigation-body *
 {
   height: 5px;
   margin-top: -5px;
-/*  background: url(/weblocks-common/pub/images/page/top_right.png) no-repeat top right;*/
   overflow: hidden;
 }
 
@@ -66,7 +60,6 @@ div.page-wrapper * div.navigation-body *
   margin-top: -5px;
   margin-left: 5px;
   margin-right: 5px;
-/*  background: url(/weblocks-common/pub/images/page/hor_border.png) repeat-x top;*/
   overflow: hidden;
 }
 
@@ -80,7 +73,6 @@ div#root
 {
   padding: 3em;
   min-height: 45ex;
-  background-image: url("/pub/images/transparent.png");
 
 }
 
@@ -110,7 +102,6 @@ div#main-menu div.menu
 .dialog .dialog-extra-bottom-1
 {
   height: 5px;
-/*  background: url(/weblocks-common/pub/images/page/bottom_left.png) no-repeat top left;*/
   overflow: hidden;
 }
 
@@ -119,7 +110,6 @@ div#main-menu div.menu
 {
   height: 5px;
   margin-top: -5px;
-/*  background: url(/weblocks-common/pub/images/page/bottom_right.png) no-repeat top right;*/
   overflow: hidden;
 }
 
@@ -130,7 +120,6 @@ div#main-menu div.menu
   margin-top: -5px;
   margin-left: 5px;
   margin-right: 5px;
-/*  background: url(/weblocks-common/pub/images/page/hor_border_bottom.png) repeat-x top;*/
   overflow: hidden;
 }
 
@@ -142,8 +131,6 @@ div#main-menu div.menu
 
 .header
 {
-/*  height: 52px; */
-/*  background: url(/weblocks-common/pub/images/header/background.png) repeat-x;*/
   margin-top: 2em;
   margin-bottom: 2em;
   margin-left: 0em;
@@ -153,7 +140,6 @@ div#main-menu div.menu
 .header .extra-top-1
 {
   height: 5px;
-/*  background: url(/weblocks-common/pub/images/header/top_left.png) no-repeat top left;*/
   overflow: hidden;
 }
 
@@ -161,7 +147,6 @@ div#main-menu div.menu
 {
   height: 5px;
   margin-top: -5px;
-/*  background: url(/weblocks-common/pub/images/header/top_right.png) no-repeat top right;*/
   overflow: hidden;
 }
 
@@ -169,13 +154,11 @@ div#main-menu div.menu
 {
   height: 42px;
   margin-left: 5px;
-/*  background: url(/weblocks-common/pub/images/header/logo.png) no-repeat center left;*/
 }
 
 .header .extra-bottom-1
 {
   height: 5px;
-/*  background: url(/weblocks-common/pub/images/header/bottom_left.png) no-repeat top left;*/
   overflow: hidden;
 }
 
@@ -183,7 +166,6 @@ div#main-menu div.menu
 {
   height: 5px;
   margin-top: -5px;
-/*  background: url(/weblocks-common/pub/images/header/bottom_right.png) no-repeat top right;*/
   overflow: hidden;
 }
 
