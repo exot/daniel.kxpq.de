@@ -1,4 +1,3 @@
-
 (defpackage #:website
   (:use :cl
         :weblocks-stores
@@ -8,10 +7,10 @@
         :cl-who)
   (:import-from :hunchentoot
                 #:header-in
-		#:set-cookie
+                #:set-cookie
                 #:set-cookie*
                 #:cookie-in
-		#:user-agent
+                #:user-agent
                 #:referer)
   (:documentation
    "A web application based on Weblocks."))
@@ -29,7 +28,7 @@
     :name *website-name*
     :init-user-session 'website::init-user-session
     :ignore-default-dependencies nil
-    :public-files-path #P"/home/borch/lisp/cl/source/website/pub/"
+    :public-files-path #P"./pub"
     :autostart nil
     :html-indent-p t
     :dependencies  '((:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
