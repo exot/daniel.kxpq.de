@@ -18,8 +18,7 @@
   (declare (ignore rendered-html))
   (with-html
     (:div :class "footer"
-          :style "color:white"
-      (:div :style "position:absolute;right:1em"
+      (:div :class "impressum"
         (:a :href "/impressum" "Impressum")))))
 
 ;;; Website Header

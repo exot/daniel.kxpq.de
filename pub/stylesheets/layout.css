@@ -82,17 +82,15 @@ div#main-menu div.menu
 
 .footer
 {
-  margin-top: 1em;
+    margin-top: 1em;
+    position:absolute;
+    right:1em;
+    font-size:80%;
 }
 
-.footer p#system-info
-{
-  margin-bottom: 0;
-}
-
-.footer p#contact-info
-{
-  margin-top: 0;
+.footer a {
+    text-decoration: none;
+    color:#DDD;
 }
 
 /* Poems */
