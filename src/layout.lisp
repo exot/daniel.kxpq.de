@@ -63,9 +63,6 @@
 
 (defun make-start-page ()
   (make-widget (list
-                (make-instance 'header
-                               :default-title "home"
-                               :title-fn #'website-heading)
                 (make-instance 'static-selector
                                :panes (list (cons "home"   (make-home-page))
                                             (cons "math"   (make-math-page))

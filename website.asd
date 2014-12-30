@@ -37,8 +37,7 @@
                                             :depends-on (types))))
                              (:module widgets
                               :depends-on (models)
-                              :components ((:file "header")
-                                           (:file "poem")
+                              :components ((:file "poem")
                                            (:file "login-maybe")))
                              (:file "layout"
                               :depends-on (models views widgets))))))
