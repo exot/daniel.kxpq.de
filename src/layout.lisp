@@ -70,10 +70,18 @@
                                :default-title "home"
                                :title-fn #'website-heading)
                 (make-instance 'static-selector
-                               :panes (list (cons "home"    (make-home-page))
-                                            (cons  "me"     (md "personal.md"))
-                                            (cons  "math"   (make-math-page))
-                                            (cons  "poetry" (make-poems-page)))))))
+                               :panes (list (cons "home"   (make-home-page))
+                                            (cons "math"   (make-math-page))
+                                            (cons "poetry" (make-poems-page))
+                                            (cons "fun"    (make-fun-page)))))))
+
+;;; Fun
+
+(defun make-fun-page ()
+  (make-widget (f_%
+                 (with-html
+                   (:h1 "Bla"))
+                 (render-link (f_% (print "Woo!")) "Erm?"))))
 
 ;;; Home
 
