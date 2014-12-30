@@ -1,4 +1,3 @@
-
 (in-package :website)
 
 ;;; Customize rendering
@@ -70,13 +69,11 @@
                 (make-instance 'header
                                :default-title "home"
                                :title-fn #'website-heading)
-                (make-navigation "Main Menu"
-                                 "home"       (make-home-page)
-                                 "me"         (md "personal.md")
-                                 "math"       (make-math-page)
-                                 "poetry"     (make-poems-page)
-                                 ;"pensieve"   (make-pensieve-page)
-                                 ))))
+                (make-instance 'static-selector
+                               :panes (list (cons "home"    (make-home-page))
+                                            (cons  "me"     (md "personal.md"))
+                                            (cons  "math"   (make-math-page))
+                                            (cons  "poetry" (make-poems-page)))))))
 
 ;;; Home
 

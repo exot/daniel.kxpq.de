@@ -28,11 +28,12 @@
     :name *website-name*
     :init-user-session 'website::init-user-session
     :ignore-default-dependencies nil
-    :public-files-path #P"./pub"
+    :public-files-path #P"./pub"        ; Note: run the website in the directory of this file
     :autostart nil
     :html-indent-p t
     :dependencies  '((:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
-                     (:script "mathjax"))
+                     (:script "mathjax")
+                     (:stylesheet "http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin"))
     )
 
 ;;; Top level start & stop scripts
