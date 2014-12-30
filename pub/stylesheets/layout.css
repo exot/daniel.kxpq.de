@@ -1,17 +1,17 @@
 
 @font-face {
   font-family: 'freemono';
-  src: url('http://daniel.kxpq.de/pub/fonts/FreeMono.otf');
+  src: url('/pub/fonts/FreeMono.otf');
 }
 
 @font-face {
   font-family: 'freeserif';
-  src: url('http://daniel.kxpq.de/pub/fonts/FreeSerif.otf');
+  src: url('/pub/fonts/FreeSerif.otf');
 }
 
 @font-face {
   font-family: 'freesans';
-  src: url('http://daniel.kxpq.de/pub/fonts/FreeSans.otf');
+  src: url('/pub/fonts/FreeSans.otf');
 }
 
 body
