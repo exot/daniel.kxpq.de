@@ -5,16 +5,32 @@ function updateElementBody(element, newBody) {
 }
 
 function updateElement(element, newElement) {
-    element.replace(newElement);
+  var parent = element.parentNode;
+  parent.replaceChild(newElement[0], element);
+
+  if(element.next()){
+    var next = element.next();
+    var insertMethod =  function(newEl){
+      parent.insertBefore(newEl, next);
+    };
+  }else{
+    var insertMethod = function(newEl){
+      parent.appendChild(newEl);
+    };
+  }
+
+  for(var i=1;i < newElement.length - 1;i++){
+    insertMethod(newElement[i]);
+  }
 }
 
 function selectionEmpty() {
     if(document.getSelection) {
-	return document.getSelection() == "";
+        return document.getSelection() == "";
     } else if(document.selection && document.selection.createRange) {
-	return document.selection.createRange().text == "";
+        return document.selection.createRange().text == "";
     } else {
-	return true;
+        return true;
     }
 }
 
@@ -22,59 +38,70 @@ function addCss(cssCode) {
     var styleElement = document.createElement("style");
     styleElement.type = "text/css";
     if (styleElement.styleSheet) {
-	styleElement.styleSheet.cssText = cssCode;
+        styleElement.styleSheet.cssText = cssCode;
     } else {
-	styleElement.appendChild(document.createTextNode(cssCode));
+        styleElement.appendChild(document.createTextNode(cssCode));
     }
     document.getElementsByTagName("head")[0].appendChild(styleElement);
 }
 
 function stopPropagation(event) {
     if(event.preventDefault) {
-	event.stopPropagation();
+        event.stopPropagation();
     } else {
-	event.cancelBubble = true;
+        event.cancelBubble = true;
     };
 }
 
 // Register global AJAX handlers to show progress
 Ajax.Responders.register({
   onCreate: function() {
-	    $('ajax-progress').innerHTML = "<img src='pub/images/progress.gif'>";
-	},
+            $('ajax-progress').innerHTML = "<img src='/pub/images/progress.gif'>";
+        },
   onComplete: function() {
-	    $('ajax-progress').innerHTML = "";
-	}
+            $('ajax-progress').innerHTML = "";
+        }
 });
 
 function onActionSuccess(transport) {
     // Grab json value
     var json;
-    if(Prototype.Browser.WebKit) {
-	// We should sanitize JSON, but at the moment it crashes Safari
-        json = transport.responseText.evalJSON();
-    } else {
-        json = transport.responseText.evalJSON(true);
-    }
+
+    json = transport.responseText.evalJSON(false);
 
     // See if there are redirects
     var redirect = json['redirect'];
     if (redirect)
     {
-	window.location.href = redirect;
-	return;
+        window.location.href = redirect;
+        return;
     }
 
     execJsonCalls(json['before-load']);
 
     // Update dirty widgets
     var dirtyWidgets = json['widgets'];
+    var minTopOffset = document.documentElement.getHeight();
+
     for(var i in dirtyWidgets) {
-	var widget = $(i);
-	if(widget) {
+        var widget = $(i);
+        if(widget) {
             //console.log("updating widget %s", i);
-	    updateElement(widget, dirtyWidgets[i]);
-	}
+          var el = (new Element('div')).update(dirtyWidgets[i]).childElements();
+          updateElement(widget, el);
+
+          el.each(function(th){
+            var offsetTop = th.cumulativeOffset().top;
+            if(offsetTop < minTopOffset){
+              minTopOffset = offsetTop;
+            }
+          });
+        }
+    }
+    
+    // Scroll top if some of updated elements is above area viewed by user
+    if(minTopOffset < window.scrollY){
+      new Effect.ScrollTo(document, { duration:0.2 });
     }
 
     execJsonCalls(json['on-load']);
@@ -82,15 +109,15 @@ function onActionSuccess(transport) {
 
 function execJsonCalls (calls) {
     if(calls) {
-	calls.each(function(item)
-			 {
-			     try {
+        calls.each(function(item)
+                         {
+                             try {
                                  //console.log("evalScript: %o", item);
                                  item.evalScripts();
-			     } catch(e) {
+                             } catch(e) {
                                  //console.log("Error evaluating AJAX script %o: %s", item, e);
                              }
-			 });
+                         });
     }
 }
 
@@ -142,16 +169,16 @@ function initiateFormAction(actionCode, form, sessionString) {
 
 function disableIrrelevantButtons(currentButton) {
     $(currentButton.form).getInputs('submit').each(function(obj)
-						   {
-						       obj.disable();
-						       currentButton.enable();
-						   });
+                                                   {
+                                                       obj.disable();
+                                                       currentButton.enable();
+                                                   });
 }
 
 // Fix IE6 flickering issue
 if(Prototype.Browser.IE) {
     try {
-	document.execCommand("BackgroundImageCache", false, true);
+        document.execCommand("BackgroundImageCache", false, true);
     } catch(err) {}
 }
 
@@ -161,24 +188,24 @@ if(Prototype.Browser.IE) {
 if(!window.XMLHttpRequest) {
     // IE6 only
     Event.observe(window, 'load', function() {
-	    var tableRows = $$('.table table tbody tr');
-	    tableRows.each(function(row) {
-		    Event.observe(row, 'mouseover', function() {
-			    row.addClassName('hover');
-			});
-		    Event.observe(row, 'mouseout', function() {
-			    row.removeClassName('hover');
-			});
-		});
-	});
+            var tableRows = $$('.table table tbody tr');
+            tableRows.each(function(row) {
+                    Event.observe(row, 'mouseover', function() {
+                            row.addClassName('hover');
+                        });
+                    Event.observe(row, 'mouseout', function() {
+                            row.removeClassName('hover');
+                        });
+                });
+        });
 }
 
 // Support suggest control
 function declareSuggest(inputId, choicesId, resultSet, sessionString) {
     if(resultSet instanceof Array) {
-	new Autocompleter.Local(inputId, choicesId, resultSet, {});
+        new Autocompleter.Local(inputId, choicesId, resultSet, {});
     } else {
-	new Ajax.Autocompleter(inputId, choicesId, getActionUrl(resultSet, sessionString, true), {});
+        new Ajax.Autocompleter(inputId, choicesId, getActionUrl(resultSet, sessionString, true), {});
     }
 }
 
@@ -186,15 +213,15 @@ function replaceDropdownWithSuggest(ignoreWelcomeMsg, inputId, inputName, choice
     var dropdownOptions = $(inputId).childElements();
     var suggestOptions = [];
     dropdownOptions.each(function(i)
-			 {
-			     if(!(i == dropdownOptions[0] && ignoreWelcomeMsg)) {
-				 suggestOptions.push(i.innerHTML);
-			     }
-			 });
+                         {
+                             if(!(i == dropdownOptions[0] && ignoreWelcomeMsg)) {
+                                 suggestOptions.push(i.innerHTML);
+                             }
+                         });
 
     var inputBox = '<input type="text" id="' + inputId + '" name="' + inputName + '" class="suggest"';
     if(value) {
-	inputBox += 'value="' + value +'"';
+        inputBox += 'value="' + value +'"';
     }
     inputBox += '/>';
 
@@ -224,56 +251,11 @@ function include_dom(script_filename) {
   return false;
 }
 
-/* working with CSS classes */
-function addClass(el,myClass){
-  if ((hasClass(el,myClass)) || (typeof el == 'undefined'))
-    return;
-  el.className += " " + myClass;
+function updateWidgetStateFromHash() {
+  // http://stackoverflow.com/questions/680785/on-window-location-hash-change
+  // TODO need to detect if the hash has been changed but the page hasn't been reloaded
+  // TODO only call this if the hash is actually different from the last recorded hash
+  var hash = window.location.hash;
+  if (hash)
+    initiateActionWithArgs(null, null, {'weblocks-internal-location-hash':hash}, "GET", "/");
 }
-
-function removeClass(el,myClass){
-  if (typeof el=='undefined')
-    return;
-  if (el.getAttribute('class') === null)
-    return;
-
-  var classes = el.getAttribute('class').split(" ");
-  var result=[];
-
-  for (i=classes.length;i>=0;i--) {
-    if (classes[i] != myClass)
-      result.push(classes[i]);
-  }
-
-  el.setAttribute('class', result.join(" ")); /* FIXME: ie6/7 need className here */
-}
-
-function hasClass(el, myClass){
-  if ((el.className === null) || (typeof el == 'undefined'))
-    return false;
-
-  var classes = el.className.split(" ");
-
-  for (i=classes.length;i>=0;i--) {
-    if (classes[i] == myClass)
-      return true;
-  }
-
-  return false;
-}
-
-/* collapsible sections */
-function toggleExpandCollapse (heading,container) {
-  if (hasClass(heading,"collapsed")) {
-    removeClass(heading,"collapsed");
-    removeClass(container,"collapsed");
-    addClass(heading,"expanded");
-    addClass(container,"expanded");
-  } else {
-    removeClass(heading,"expanded");
-    removeClass(container,"expanded");
-    addClass(heading,"collapsed");
-    addClass(container,"collapsed");
-  }
-}
-
