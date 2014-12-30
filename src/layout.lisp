@@ -99,9 +99,7 @@
 (defun make-math-page ()
   (make-instance 'static-selector
                  :panes (list
-                         (cons "main"       (md "math.md"))
-                         (cons "fca"        (md "fca.md"))
-                         (cons "conexp-clj" (md "conexp-clj.md")))))
+                         (cons "main" (md "math.md")))))
 
 ;;; Poems
 
