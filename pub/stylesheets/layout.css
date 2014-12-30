@@ -127,6 +127,13 @@ div.dismiss-button
     text-align:right;
 }
 
+div.dismiss-button a
+{
+    text-decoration: none;
+    font-size: 80%;
+    color: #BBB;
+}
+
 div.folded-poem
 {
     display:table;
@@ -142,4 +149,18 @@ div.folded-poem div.show-button
 {
     display:table-cell;
     text-align:right;
+}
+
+div.folded-poem div.show-button a{
+    text-decoration: none;
+    font-size: 80%;
+    color: #BBB;
+}
+
+div.poem-selector hr {
+    color: #EEE;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
