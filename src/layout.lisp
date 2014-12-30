@@ -2,6 +2,10 @@
 
 ;;; Customize rendering
 
+(defmethod render-page-headers :after ((app website))
+  (with-html
+    (:link :rel "shortcut icon" :href "")))
+
 (defmethod render-page-body :before ((app website) rendered-html)
   (declare (ignore rendered-html))
   (with-html
