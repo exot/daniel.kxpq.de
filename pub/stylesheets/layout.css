@@ -146,8 +146,8 @@ div#main-menu div.menu
 /*  background: url(/weblocks-common/pub/images/header/background.png) repeat-x;*/
   margin-top: 2em;
   margin-bottom: 2em;
-  margin-left: 3em;
-  margin-right: 3em;
+  margin-left: 0em;
+  margin-right: 0em;
 }
 
 .header .extra-top-1
