@@ -71,9 +71,11 @@ div#root, .dialog-body, .dialog h1
 
 div#root
 {
-  padding: 3em;
-  min-height: 45ex;
-
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
+    min-height: 45ex;
 }
 
 /* IE 6 specific hacks (has layout and min-height)*/
@@ -131,7 +133,7 @@ div#main-menu div.menu
 
 .header
 {
-  margin-top: 2em;
+  margin-top: 0em;
   margin-bottom: 2em;
   margin-left: 0em;
   margin-right: 0em;
