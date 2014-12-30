@@ -18,8 +18,8 @@
   (with-html
     (:div :class "footer"
           :style "color:white"
-      (:div :style "position:absolute;right:1em"
-        (:a :href "/impressum" "Impressum"))
+      ;; (:div :style "position:absolute;right:1em"
+      ;;   (:a :href "/impressum" "Impressum"))
       (:a :href "http://common-lisp.net"
           (:img :src (make-webapp-public-file-uri "images/footer/lisp-lizard.png")
                 :alt "Public Projects for Common Lisp"))
