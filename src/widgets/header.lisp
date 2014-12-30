@@ -1,4 +1,3 @@
-
 (in-package :website)
 
 ;;;
@@ -22,14 +21,7 @@
                                 (header-default-title header))))
             (values (make-widget
                      (f_% (with-html
-                            (:div :style "display:table"
-                             (:div :style "display:table-cell;width:100%"
-                              (:h1 (:div :class "mainheader" (str title))))
-                             (:div :style "display:table-cell;"
-                                (:a :href "http://weblocks-framework.info/"
-                                    (:img :src (make-webapp-public-file-uri "images/weblocks-alien-small.png")
-                                          :alt "Made with Weblocks"
-                                          :style "vertical-align:middle")))))))
+                            (:h1 (:div :class "mainheader" (str title))))))
                     nil
                     tokens
                     :no-cache)))))
