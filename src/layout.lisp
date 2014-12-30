@@ -19,19 +19,8 @@
   (with-html
     (:div :class "footer"
           :style "color:white"
-      ;; (:div :style "position:absolute;right:1em"
-      ;;   (:a :href "/impressum" "Impressum"))
-      (:a :href "http://common-lisp.net"
-          (:img :src (make-webapp-public-file-uri "images/footer/lisp-lizard.png")
-                :alt "Public Projects for Common Lisp"))
-      (str "&nbsp;")
-      (:a :href "http://www.lisp.org"
-          (:img :src (make-webapp-public-file-uri "images/footer/lambda-lisp.png")
-                :alt "This page is made with Common Lisp."))
-      (str "&nbsp;")
-      (:a :href "http://www.catb.org/hacker-emblem/"
-          (:img :src (make-webapp-public-file-uri "images/footer/hacker.png")
-                :alt "Thou hacking shall be beautiful.")))))
+      (:div :style "position:absolute;right:1em"
+        (:a :href "/impressum" "Impressum")))))
 
 ;;; Website Header
 
@@ -67,12 +56,12 @@
 ;;; Start page
 
 (defun make-start-page ()
-  (make-widget (list
-                (make-instance 'static-selector
-                               :panes (list (cons "home"   (make-home-page))
-                                            (cons "math"   (make-math-page))
-                                            (cons "poetry" (make-poems-page))
-                                            (cons "fun"    (make-fun-page)))))))
+  (make-instance 'static-selector
+                 :panes (list (cons "home"   (make-home-page))
+                              (cons "math"   (make-math-page))
+                              (cons "poetry" (make-poems-page))
+                              (cons "fun"    (make-fun-page))
+                              (cons "impressum" (md "impressum.md")))))
 
 ;;; Fun
 
