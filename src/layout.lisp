@@ -2,15 +2,12 @@
 
 ;;; Customize rendering
 
-(defmethod render-navigation-menu ((obj navigation) &rest args &key menu-args &allow-other-keys)
-  (declare (ignore args))
-  (apply #'render-menu (navigation-menu-items obj)
-         :base (selector-base-uri obj)
-         :selected-pane nil
-         :header (navigation-header obj)
-         :container-id (dom-id obj)
-         :empty-message "No navigation entries"
-         menu-args))
+(defmethod render-page-body :before ((app website) rendered-html)
+  (declare (ignore rendered-html))
+  (with-html
+    (:div :class "pageheader"
+          (:a :href "/home" "Home")
+          (:a :href "/poetry" "Poetry"))))
 
 (defmethod render-page-body :after ((app website) rendered-html)
   (declare (ignore rendered-html))
