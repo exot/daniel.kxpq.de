@@ -23,13 +23,13 @@ body
 
 div.page-wrapper
 {
-  margin: 0cm;
-  text-align: left;
-}
+    margin: 0cm;
+    text-align: left;
+    width: 30em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
-div.page-wrapper * div.navigation-body *
-{
-    max-width:50em;
 }
 
 div#root
@@ -100,26 +100,24 @@ div#main-menu div.menu
 div.standard-poem-widget
 {
     font-family: Cardo,freeserif,Georgia,Palatino,Palatino Linotype,FreeSerif,serif;
-    width:30em;
 }
 
 div.poem-title
 {
-    padding-left:6em;
-    padding-bottom:2ex;
+    margin-left:4em;
+    margin-bottom:2ex;
     font-style: italic;
     font-size: 120%;
 }
 
 div.poem-body
 {
-    padding-left: 2em;
     text-align: left;
 }
 
 div.poem-author
 {
-    padding-top:2ex;
+    margin-top:2ex;
     font-size:80%;
     text-align:right;
 }

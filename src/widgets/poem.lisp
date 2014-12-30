@@ -10,7 +10,7 @@
 (defmethod render-widget-body ((poem-widget standard-poem-widget) &key &allow-other-keys)
   (let ((poem (poem poem-widget)))
     (with-html
-      (:div :style "padding-top:3ex;padding-bottom:3ex;"
+      (:div
         (when (poem-title poem)
           (htm (:div :class "poem-title"
                  (str (poem-title poem)))))
