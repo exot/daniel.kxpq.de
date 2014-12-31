@@ -64,7 +64,6 @@
                                                          (with-html
                                                            (:div :class "http-not-found"
                                                                  "Sorry, that page does not exist.")))))))
-                                      (print widget)
                                       (values widget (list (first tokens)) (rest tokens) :no-cache)))))
 
 ;;; Fun (i.e., trying things out)
