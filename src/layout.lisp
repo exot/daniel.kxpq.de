@@ -54,7 +54,7 @@
                               (cons "essays" (make-essay-page))
                               (cons "about"  (md "about.md")))))
 
-;;; Fun
+;;; Fun (i.e., trying things out)
 
 (defun make-fun-page ()
   (make-widget (f_%
