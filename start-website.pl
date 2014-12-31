@@ -18,9 +18,6 @@ exit system("/home/borch/.local/bin/ccl",
             "--eval", <<'HERE');
   (progn
     (ql:quickload :website)
-    (funcall (read-from-string "website:start-website"))
-    (ql:quickload :swank)
-    (funcall (read-from-string "swank-loader:init"))
-    (funcall (read-from-string "swank:create-server") :port 50001 :dont-close t))
+    (funcall (read-from-string "website:start-website")))
 HERE
 ;
