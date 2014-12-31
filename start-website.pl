@@ -14,7 +14,7 @@ exit 0
 
 chdir "daniel.kxpq.de/";
 
-exit system("/home/borch/.local/bin/ccl",
+exit system("/usr/bin/sbcl",
             "--eval", <<'HERE');
   (progn
     (ql:quickload :website)
