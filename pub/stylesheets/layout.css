@@ -123,6 +123,7 @@ div.poem-author
 div.dismiss-button
 {
     text-align:right;
+    width: 110%;
 }
 
 div.dismiss-button a
@@ -135,12 +136,14 @@ div.dismiss-button a
 div.folded-poem
 {
     display:table;
+    width: 110%;
+    text-align: center;
 }
 
 div.folded-poem div.poem-description
 {
     display:table-cell;
-    width:100%;
+    width:91%;
 }
 
 div.folded-poem div.show-button
