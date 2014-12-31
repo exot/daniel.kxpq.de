@@ -21,20 +21,6 @@
       (:div :class "impressum"
         (:a :href "/impressum" "Impressum")))))
 
-;;; Website Header
-
-(let ((headings (make-hash-table :test #'equal)))
-  (defun website-heading (key)
-    (multiple-value-bind (value present) (gethash key headings)
-      (if present
-          value
-          (string-capitalize key))))
-
-  (defun (setf website-heading) (value key)
-    (setf (gethash key headings) value))
-
-  nil)
-
 ;;; Starting point
 
 (defvar *initial-poem* nil
@@ -72,8 +58,6 @@
 
 ;;; Home
 
-(setf (website-heading "home") *website-name*)
-
 (defun make-home-page ()
   (make-widget
    (f_% (with-html
@@ -89,8 +73,6 @@
                          (cons "main" (md "math.md")))))
 
 ;;; Poems
-
-(setf (website-heading "poetry") "Poetry")
 
 (defun make-poems-page ()
   (make-instance 'static-selector
@@ -118,8 +100,6 @@
                                :item-form-view 'poem-form-view))))
 
 ;;; Pensieve
-
-(setf (website-heading "pensieve") "Daniel's Pensieve")
 
 (defun make-pensieve-page ()
   (make-instance 'on-demand-selector
