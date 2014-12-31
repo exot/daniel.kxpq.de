@@ -1,4 +1,3 @@
-
 (in-package :website)
 
 ;;; From http://teddyb.org/rlp/tiki-index.php?page=Learning+About+Weblocks
@@ -23,7 +22,14 @@
 (defmethod render-widget-body ((self login-maybe) &key &allow-other-keys)
   (cond
     ((authenticatedp)
-     (render-widget (slot-value self 'real-child-widget) :inlinep t))
+     (unless (slot-boundp self 'real-child-widget)
+       (when (login-maybe-child-widget self)
+        (setf (slot-value self 'real-child-widget)
+              (funcall (login-maybe-child-widget self)))
+        (setf (login-maybe-child-widget self) nil)))
+     (when (slot-boundp self 'real-child-widget)
+       (render-widget (slot-value self 'real-child-widget)
+                      :inlinep t)))
     (t (call-next-method))))
 
 (defun accept-user-p (email password-hash)
@@ -34,15 +40,9 @@
 
 (defun check-login (login-widget credentials-obj)
   "Check the user's login credentials"
-  (cond
-    ((accept-user-p (slot-value credentials-obj 'email)
-                    (slot-value credentials-obj 'password))
-      (when (login-maybe-child-widget login-widget)
-        (setf (slot-value login-widget 'real-child-widget)
-              (funcall (login-maybe-child-widget login-widget)))
-        (setf (login-maybe-child-widget login-widget) nil))
-      t)
-    (t nil)))
+  (declare (ignore login-widget))
+  (accept-user-p (slot-value credentials-obj 'email)
+                 (slot-value credentials-obj 'password)))
 
 ;;;
 

@@ -46,13 +46,14 @@
 
 (defun make-start-page ()
   (make-instance 'static-selector
-                 :panes (list (cons "home"   (make-home-page))
-                              (cons "math"   (make-math-page))
-                              (cons "poetry" (make-poems-page))
-                              (cons "fun"    (make-fun-page))
+                 :panes (list (cons "home"      (make-home-page))
+                              (cons "math"      (make-math-page))
+                              (cons "poetry"    (make-poems-page))
+                              (cons "fun"       (make-fun-page))
                               (cons "impressum" (md "impressum.md"))
-                              (cons "essays" (make-essay-page))
-                              (cons "about"  (md "about.md")))))
+                              (cons "essays"    (make-essay-page))
+                              (cons "about"     (md "about.md"))
+                              (cons "internal"  (make-admin-page)))))
 
 ;;; Fun (i.e., trying things out)
 
@@ -122,6 +123,32 @@
                       (render-widget (md "pensieve/pragmatic-power.md"))
                       (:hr)
                       (render-widget (md "pensieve/maintaining-understandability.md"))))))))
+
+;;; Internal
+
+(defparameter *now* (local-time:now))
+
+(defun make-admin-page ()
+  (make-instance 'login-maybe
+                 :child-widget (f_% (make-widget
+                                     (f_% (with-html
+                                            (:table
+                                             (:tr (:td "Running since")
+                                                  (:td (str *now*)))
+                                             (:tr (:td "Lisp")
+                                                  (:td (str (lisp-implementation-type))
+                                                       " "
+                                                       (str (lisp-implementation-version))))
+                                             (:tr (:td "Hunchentoot")
+                                                  (:td (str hunchentoot:*hunchentoot-version*))))
+                                            (:br)
+                                            (render-link (f_% (reset-sessions))
+                                                         "Reset Sessions")
+                                            (:br)
+                                            (render-link (f_% (ql:quickload :website))
+                                                         "Reload Website")
+                                            " (may not work)"))))
+                 :on-login #'check-login))
 
 ;;;
 

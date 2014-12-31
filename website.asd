@@ -16,7 +16,8 @@
                :weblocks-memory
                :weblocks
                :cl-prevalence
-               :trivial-shell)
+               :trivial-shell
+               :local-time)
   :components ((:file "website")
                (:module conf
                 :depends-on ("website")
