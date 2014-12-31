@@ -140,7 +140,9 @@
                                                        " "
                                                        (str (lisp-implementation-version))))
                                              (:tr (:td "Hunchentoot")
-                                                  (:td (str hunchentoot:*hunchentoot-version*))))
+                                                  (:td (str hunchentoot:*hunchentoot-version*)))
+                                             (:tr (:td "Sessions")
+                                                  (:td (str (length (active-sessions))))))
                                             (:br)
                                             (render-link (f_% (reset-sessions))
                                                          "Reset Sessions")
