@@ -97,6 +97,14 @@ table.internal-data td {
     vertical-align: top;
 }
 
+div.logs div {
+    font-size: 60%;
+    white-space: pre;
+    overflow: scroll;
+    height: 40ex;
+    font-family: freemono;
+}
+
 /* Poems */
 
 div.standard-poem-widget

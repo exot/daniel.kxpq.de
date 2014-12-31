@@ -144,6 +144,16 @@
                                              (:tr (:td "Sessions")
                                                   (:td (str (length (active-sessions))))))
                                             (:br)
+                                            (:div :class "logs"
+                                                  (:h3 "message.log")
+                                                  (:div
+                                                   (str (alexandria:read-file-into-string
+                                                         #P"message.log")))
+                                                  (:h3 "access.log")
+                                                  (:div
+                                                   (str (alexandria:read-file-into-string
+                                                         #P"access.log"))))
+                                            (:br)
                                             (render-link (f_% (reset-sessions))
                                                          "Reset Sessions")
                                             (:br)

@@ -17,7 +17,8 @@
                :weblocks
                :cl-prevalence
                :trivial-shell
-               :local-time)
+               :local-time
+               :alexandria)
   :components ((:file "website")
                (:module conf
                 :depends-on ("website")
