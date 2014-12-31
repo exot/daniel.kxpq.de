@@ -132,8 +132,8 @@
   (make-instance 'login-maybe
                  :child-widget (f_% (make-widget
                                      (f_% (with-html
-                                            (:table
-                                             (:tr (:td "Running since")
+                                            (:table :class "internal-data"
+                                             (:tr (:td "Started")
                                                   (:td (str *now*)))
                                              (:tr (:td "Lisp")
                                                   (:td (str (lisp-implementation-type))

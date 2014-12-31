@@ -93,6 +93,10 @@ div#main-menu div.menu
     color:#DDD;
 }
 
+table.internal-data td {
+    vertical-align: top;
+}
+
 /* Poems */
 
 div.standard-poem-widget
