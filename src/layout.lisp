@@ -44,27 +44,28 @@
 ;;; Start page
 
 (defun make-start-page ()
-  (let ((page-list (list (cons "home"      (make-home-page))
-                         (cons "math"      (make-math-page))
-                         (cons "poetry"    (make-poems-page))
-                         (cons "fun"       (make-fun-page))
-                         (cons "impressum" (md "impressum.md"))
-                         (cons "essays"    (make-essay-page))
-                         (cons "about"     (md "about.md"))
-                         (cons "internal"  (make-admin-page)))))
+  (let ((page-list (list (cons "home"      #'make-home-page)
+                         (cons "math"      #'make-math-page)
+                         (cons "poetry"    #'make-poems-page)
+                         (cons "fun"       #'make-fun-page)
+                         (cons "impressum" (lambda () (md "impressum.md")))
+                         (cons "essays"    #'make-essay-page)
+                         (cons "about"     (lambda () (md "about.md")))
+                         (cons "internal"  #'make-admin-page))))
     (make-instance 'on-demand-selector
                    :lookup-function (lambda (selector tokens)
                                       (declare (ignore selector))
                                       (let ((widget (or (and (eq nil (first tokens))
-                                                             (cdr (first page-list)))
-                                                        (cdr (assoc (first tokens) page-list
-                                                                    :test #'equalp))
+                                                             (make-home-page))
+                                                        (awhen (assoc (first tokens) page-list
+                                                                      :test #'equalp)
+                                                          (funcall (cdr it)))
                                                         (make-widget
                                                          (f_%
                                                            (with-html
                                                              (:div :class "http-not-found"
                                                                    "Sorry, that page does not exist.")))))))
-                                        (values widget (list (first tokens)) (rest tokens) :no-cache))))))
+                                        (values widget (list (first tokens)) (rest tokens) t))))))
 ;;; Fun (i.e., trying things out)
 
 (defun make-fun-page ()
