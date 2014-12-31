@@ -20,33 +20,17 @@ img
     background-color: #ecf8d7;
 }
 
-.view .extra-top-1
-{
-  height: 7px;
-/*  background: url(/weblocks-common/pub/images/widget/top_left.png) no-repeat top left;*/
-  overflow: hidden;
-}
-
-.view .extra-top-2
-{
-  height: 7px;
-  margin-top: -7px;
-/*  background: url(/weblocks-common/pub/images/widget/top_right.png) no-repeat top right;*/
-/*  border-bottom: 1px solid #dbeac1; */
-  overflow: hidden;
-}
-
-.view h1, .view fieldset h1,
-.long-form fieldset .validation-errors-summary h2.error-count
-{
-  margin: 0;
-  padding: 0;
-  padding-left: 0.4em;
-}
-
-h1, h2
+h1
 {
   font-size: 120%;
+  color: #29364F;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+h2
+{
+  font-size: 110%;
   color: #29364F;
   font-weight: bold;
   margin-top: 0;

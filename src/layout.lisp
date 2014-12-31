@@ -12,6 +12,8 @@
     (:div :class "pageheader"
           (:a :href "/home" "Home")
           " ⋅ "
+          (:a :href "/essays" "Essays")
+          " ⋅ "
           (:a :href "/poetry" "Poetry"))))
 
 (defmethod render-page-body :after ((app website) rendered-html)
@@ -46,7 +48,8 @@
                               (cons "math"   (make-math-page))
                               (cons "poetry" (make-poems-page))
                               (cons "fun"    (make-fun-page))
-                              (cons "impressum" (md "impressum.md")))))
+                              (cons "impressum" (md "impressum.md"))
+                              (cons "essays" (make-essay-page)))))
 
 ;;; Fun
 
@@ -99,21 +102,23 @@
                                :item-data-view 'poem-data-view
                                :item-form-view 'poem-form-view))))
 
-;;; Pensieve
+;;; Essays
 
-(defun make-pensieve-page ()
-  (make-instance 'on-demand-selector
-                 :lookup-function (lambda (selector tokens)
-                                    (declare (ignore selector))
-                                    (values (if (or (null tokens)
-                                                    (string= (first tokens) "")
-                                                    (string= (first tokens) "main"))
-                                                (md "pensieve/main.md")
-                                                (md (concatenate 'string
-                                                                 "pensieve/" (first tokens) ".md"))) ;safe?
-                                            tokens
-                                            nil
-                                            nil)))) ;don't cache
+(defun make-essay-page ()
+  (make-widget
+   (f_% (with-html
+          (:div :class "essays"
+                "Things I wrote about some time ago.  Enjoy!"
+                (:div :class "table-of-contents"
+                      (:ul (:li (:a :href "#on-the-pragmatic-power-of-programming-languages"
+                                    "On the Pragmatic Power of Programming Languages"))
+                           (:li (:a :href "#maintaining-understandability"
+                                    "Maintaining Understandability"))))
+                (:div :class "texts"
+                      (:hr)
+                      (render-widget (md "pensieve/pragmatic-power.md"))
+                      (:hr)
+                      (render-widget (md "pensieve/maintaining-understandability.md"))))))))
 
 ;;;
 

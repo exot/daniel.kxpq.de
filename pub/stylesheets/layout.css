@@ -162,3 +162,28 @@ div.poem-selector hr {
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Essays */
+
+div.essays div.table-of-contents a {
+    text-decoration: none;
+}
+
+div.essays div.table-of-contents ul li {
+    list-style-type: decimal;
+}
+
+div.essays div.texts hr {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+div.essays div.texts div.footnotes hr {
+    color: #DDD;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0cm;
+    margin-bottom: 0cm;
+}

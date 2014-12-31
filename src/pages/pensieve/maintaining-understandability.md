@@ -11,10 +11,11 @@ has to do a lot to *understand* the code.  It may very well be that code that is
 on the *pragmatic* side of representing the solution to a problem.  So the aim is not to write
 succinct code but to write understandable code, and that's where pragmatism comes in.
 
-We have addressed pragmatism [before](http://daniel.kxpq.de/pensieve/pragmatic-power), and in
-particular found out that pragmatism is not a property of a programming language but merely can only
-be considered in the presence of a certain programmer and a particular problem.  Nevertheless,
-pragmatism can be related to understandability of code, as we shall see.
+We have addressed pragmatism
+[before](/essays#on-the-pragmatic-power-of-programming-languages), and in particular found
+out that pragmatism is not a property of a programming language but merely can only be
+considered in the presence of a certain programmer and a particular problem.
+Nevertheless, pragmatism can be related to understandability of code, as we shall see.
 
 ## Understandability implies Maintainability, and Vice Versa
 
@@ -35,7 +36,7 @@ So, principles of proper maintaining have been developed, given programmers guid
 should do their work.  But how can one assume that there even *exist* principles for fixing bugs?
 Or principles for writing new features?  Wouldn't that imply that we already know the bug, or at
 least the very nature of essentially every bug?  If we would do so, we wouldn't have bugs, which
-[might by possible][landoflisp], but not with mainstream programming.  And with new features, things
+[might be possible][landoflisp], but not with mainstream programming.  And with new features, things
 are even worse, since creativity, in its very nature, cannot be principlized.
 
 [landoflisp]: http://landoflisp.com

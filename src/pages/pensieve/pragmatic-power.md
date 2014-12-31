@@ -21,8 +21,9 @@ this programmer).
 So let us loosely define the *pragmatic power*.  Suppose a programming language X (without defining
 what actually a programming language is), a certain problem P and a certain programmer R.  Then we
 define:
-> The pragmatic power of X corresponds to the reciprocal of the amount of work needed by R to solve
-> P in X.
+
+> The pragmatic power of X corresponds to the reciprocal of the amount of work needed by R
+> to solve P in X.
 
 This "definition" is by far formal, and it may be that it cannot be formalized, because it describes
 an inherently subjective matter -- the way programmers think.
@@ -84,7 +85,7 @@ programmers.  With that it was able to survive the AI winter in the eighties and
 ninties, and gains more and more attraction today, with a vast number of dialects around (Common
 Lisp, Scheme, Clojure, Arc, ...)
 
-[^1]: Yes, this is a provocation, which is a pure exaggeration.  However, it contains some truth.
+[^1]: Yes, this is a provocation, as it is a pure exaggeration.  However, it contains some truth.
 
 Note that programming languages designed by single persons may become programming languages designed
 by (quite large) groups of persons, and even commitees.  This happened to Java, Perl, Python and
