@@ -57,7 +57,9 @@
   (make-instance 'on-demand-selector
                  :lookup-function (lambda (selector tokens)
                                     (declare (ignore selector))
-                                    (let ((widget (or (cdr (assoc (first tokens) *page-list*
+                                    (let ((widget (or (and (eq nil (first tokens))
+                                                           (cdr (first *page-list*)))
+                                                      (cdr (assoc (first tokens) *page-list*
                                                                   :test #'equalp))
                                                       (make-widget
                                                        (f_%
