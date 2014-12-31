@@ -1,4 +1,4 @@
 *.lx64fsl
 access.log
 message.log
-/data/snapshot.xml
+/data/snapshot-*.xml
