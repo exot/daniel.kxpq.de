@@ -44,16 +44,28 @@
 
 ;;; Start page
 
+(defparameter *page-list* (list (cons "home"      (make-home-page))
+                                (cons "math"      (make-math-page))
+                                (cons "poetry"    (make-poems-page))
+                                (cons "fun"       (make-fun-page))
+                                (cons "impressum" (md "impressum.md"))
+                                (cons "essays"    (make-essay-page))
+                                (cons "about"     (md "about.md"))
+                                (cons "internal"  (make-admin-page))))
+
 (defun make-start-page ()
-  (make-instance 'static-selector
-                 :panes (list (cons "home"      (make-home-page))
-                              (cons "math"      (make-math-page))
-                              (cons "poetry"    (make-poems-page))
-                              (cons "fun"       (make-fun-page))
-                              (cons "impressum" (md "impressum.md"))
-                              (cons "essays"    (make-essay-page))
-                              (cons "about"     (md "about.md"))
-                              (cons "internal"  (make-admin-page)))))
+  (make-instance 'on-demand-selector
+                 :lookup-function (lambda (selector tokens)
+                                    (declare (ignore selector))
+                                    (let ((widget (or (cdr (assoc (first tokens) *page-list*
+                                                                  :test #'equalp))
+                                                      (make-widget
+                                                       (f_%
+                                                         (with-html
+                                                           (:div :class "http-not-found"
+                                                                 "Sorry, that page does not exist.")))))))
+                                      (print widget)
+                                      (values widget (list (first tokens)) (rest tokens) :no-cache)))))
 
 ;;; Fun (i.e., trying things out)
 

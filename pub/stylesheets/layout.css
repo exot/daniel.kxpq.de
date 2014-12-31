@@ -105,6 +105,10 @@ div.logs div {
     font-family: freemono;
 }
 
+div.http-not-found {
+    text-align: center;
+}
+
 /* Poems */
 
 div.standard-poem-widget
