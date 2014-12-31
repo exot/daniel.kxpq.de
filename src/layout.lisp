@@ -14,7 +14,9 @@
           " ⋅ "
           (:a :href "/essays" "Essays")
           " ⋅ "
-          (:a :href "/poetry" "Poetry"))))
+          (:a :href "/poetry" "Poetry")
+          " ⋅ "
+          (:a :href "/about" "About"))))
 
 (defmethod render-page-body :after ((app website) rendered-html)
   (declare (ignore rendered-html))
@@ -49,7 +51,8 @@
                               (cons "poetry" (make-poems-page))
                               (cons "fun"    (make-fun-page))
                               (cons "impressum" (md "impressum.md"))
-                              (cons "essays" (make-essay-page)))))
+                              (cons "essays" (make-essay-page))
+                              (cons "about"  (md "about.md")))))
 
 ;;; Fun
 
