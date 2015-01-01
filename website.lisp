@@ -49,6 +49,11 @@
   (stop-webapp 'website)
   (stop-weblocks))
 
+(defun restart-website (&rest args)
+  "Stops and starts the website, passing ARGS to START-WEBSITE."
+  (stop-website)
+  (apply #'start-website args))
+
 ;;;
 
 nil
