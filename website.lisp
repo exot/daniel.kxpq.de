@@ -21,11 +21,9 @@
 
 ;;;
 
-(defparameter *website-name* "Reaching for the Stars")
-
 (defwebapp website
   :prefix "/"
-  :name *website-name*
+  :name "Reaching for the Stars"
   :init-user-session 'website::init-user-session
   :ignore-default-dependencies nil
   :public-files-path (merge-pathnames #P"./pub" (asdf-system-directory :website))
