@@ -35,6 +35,10 @@
                   (:script "mathjax")
                   (:stylesheet "http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin")))
 
+(defstore *store* :prevalence
+  (merge-pathnames (make-pathname :directory '(:relative "data"))
+                   (asdf-system-directory :website)))
+
 ;;; Top level start & stop scripts
 
 (defun start-website (&rest args)
