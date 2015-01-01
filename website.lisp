@@ -28,8 +28,7 @@
   :name *website-name*
   :init-user-session 'website::init-user-session
   :ignore-default-dependencies nil
-  :public-files-path (merge-pathnames #P"./pub"
-                                      (asdf-system-directory :website))
+  :public-files-path (merge-pathnames #P"./pub" (asdf-system-directory :website))
   :autostart nil
   :html-indent-p t
   :dependencies '((:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
