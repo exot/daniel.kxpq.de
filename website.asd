@@ -20,11 +20,8 @@
                :local-time
                :alexandria)
   :components ((:file "website")
-               (:module conf
-                :depends-on ("website")
-                :components ((:file "stores")))
                (:module src
-                :depends-on (conf "website")
+                :depends-on ("website")
                 :components ((:file "util")
                              (:module models
                               :components ((:file "user")
