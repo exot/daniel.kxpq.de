@@ -22,12 +22,9 @@
                    (if (not html)
                        (multiple-value-bind (out err ret)
                            (trivial-shell:shell-command
-                            (concatenate 'string
-                                         "cat "
-                                         (format nil "~a" (truename (asdf-system-directory :website)))
-                                         "/src/pages/"
-                                         path
-                                         " | pandoc"))
+                            (format nil "cat ~a/src/pages/~a | pandoc"
+                                    (truename (asdf-system-directory :website))
+                                    path))
                          (if (not (zerop ret))
                              (princ err *weblocks-output-stream*)
                              (princ (setf html out) *weblocks-output-stream*)))
