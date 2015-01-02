@@ -104,8 +104,8 @@
 (defmethod render-widget-children ((obj poem-selector) &rest args)
   (with-html (:hr))
   (mapc (lambda (child)
-            (apply #'render-widget child args)
-            (with-html (:hr)))
+          (apply #'render-widget child args)
+          (with-html (:hr)))
         (widget-children obj :poems)))
 
 (defmethod initialize-instance :after ((obj poem-selector) &key &allow-other-keys)
