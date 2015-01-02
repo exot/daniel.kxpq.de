@@ -49,17 +49,29 @@
     (make-instance 'on-demand-selector
                    :lookup-function (lambda (selector tokens)
                                       (declare (ignore selector))
-                                      (let ((widget (or (and (eq nil (first tokens))
-                                                             (make-home-page))
-                                                        (awhen (assoc (first tokens) page-list
-                                                                      :test #'equalp)
-                                                          (funcall (cdr it)))
-                                                        (make-widget
-                                                         (f_%
-                                                           (with-html
-                                                             (:div :class "http-not-found"
-                                                                   "Sorry, that page does not exist.")))))))
-                                        (values widget (list (first tokens)) (rest tokens) t))))))
+                                      (let ((first-token (first tokens)))
+                                        (acond
+                                          ((and (eq nil first-token))
+                                           (values (make-home-page)
+                                                   (list first-token)
+                                                   (rest tokens)))
+                                          ((assoc first-token page-list :test #'equalp)
+                                           (let ((widget (if (functionp (cdr it))
+                                                             (let ((res (funcall (cdr it))))
+                                                               (setf page-list
+                                                                     (acons first-token res page-list))
+                                                               res)
+                                                             (cdr it))))
+                                             (values widget
+                                                     (list (first tokens))
+                                                     (rest tokens))))
+                                          (t (values (make-widget
+                                                      (f_%
+                                                        (with-html
+                                                          (:div :class "http-not-found"
+                                                                "Sorry, that page does not exist."))))
+                                                     tokens
+                                                     nil))))))))
 ;;; Fun (i.e., trying things out)
 
 (defun make-fun-page ()
