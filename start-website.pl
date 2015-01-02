@@ -12,8 +12,6 @@ use LWP::UserAgent;
 exit 0
   if LWP::UserAgent->new->get("http://daniel.kxpq.de")->code != 500;
 
-chdir "daniel.kxpq.de/";
-
 exit system("/usr/bin/sbcl",
             "--eval", <<'HERE');
   (progn

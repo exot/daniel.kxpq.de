@@ -1,4 +1,3 @@
-
 (in-package :website)
 
 ;;;
@@ -24,14 +23,14 @@
                        (multiple-value-bind (out err ret)
                            (trivial-shell:shell-command
                             (concatenate 'string
-                                         "cat src/pages/"
+                                         "cat "
+                                         (format nil "~a" (truename (asdf-system-directory :website)))
+                                         "/src/pages/"
                                          path
                                          " | pandoc"))
                          (if (not (zerop ret))
                              (princ err *weblocks-output-stream*)
-                             (progn
-                               (setf html out)
-                               (princ html *weblocks-output-stream*))))
+                             (princ (setf html out) *weblocks-output-stream*)))
                        (princ html *weblocks-output-stream*))))))
 
 
