@@ -33,14 +33,8 @@
 (defun init-user-session (root)
   (unless *initial-poem*
     (setf *initial-poem* (find-poem-by-start "I went to the woods")))
-  (let ((main-page (make-start-page)))
-    (setf (widget-children root)
-          (make-instance 'on-demand-selector
-                         :lookup-function (lambda (selector tokens)
-                                            (declare (ignore selector))
-                                            (if (string= (first tokens) "impressum")
-                                                (values (md "impressum.md") tokens nil nil)
-                                                (values main-page nil tokens nil)))))))
+  (setf (widget-children root) (make-start-page)))
+
 ;;; Start page
 
 (defun make-start-page ()
