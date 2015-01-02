@@ -127,8 +127,11 @@ div.poem-title
 div.poem-body
 {
     text-align: left;
-    margin-left: 5em;
     white-space: pre;
+}
+
+div.poem-selector div.poem-body {
+    margin-left: 5em;
 }
 
 div.poem-author
