@@ -5,19 +5,13 @@
         :f-underscore
         :anaphora
         :cl-who)
-  (:import-from :hunchentoot
-                #:header-in
-                #:set-cookie
-                #:set-cookie*
-                #:cookie-in
-                #:user-agent
-                #:referer)
+  (:export :start-website
+           :stop-website
+           :restart-website)
   (:documentation
    "A web application based on Weblocks."))
 
 (in-package :website)
-
-(export '(start-website stop-website))
 
 ;;;
 
