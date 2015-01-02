@@ -39,10 +39,13 @@
 
 ;;; Top level start & stop scripts
 
+(defparameter *starting-time* (local-time:now))
+
 (defun start-website (&rest args)
   "Starts the application by calling 'start-weblocks' with appropriate arguments."
   (apply #'start-weblocks :port 52341 args)
   (start-webapp 'website)
+  (setf *starting-time* (local-time:now))
   (setf (hunchentoot:acceptor-access-log-destination *weblocks-server*) #p"access.log"
         (hunchentoot:acceptor-message-log-destination *weblocks-server*) #p"message.log"))
 

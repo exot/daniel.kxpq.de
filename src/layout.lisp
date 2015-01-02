@@ -137,15 +137,13 @@
 
 ;;; Internal
 
-(defparameter *now* (local-time:now))
-
 (defun make-admin-page ()
   (make-instance 'login-maybe
                  :child-widget (f_% (make-widget
                                      (f_% (with-html
                                             (:table :class "internal-data"
                                              (:tr (:td "Started")
-                                                  (:td (str *now*)))
+                                                  (:td (str *starting-time*)))
                                              (:tr (:td "Lisp")
                                                   (:td (str (lisp-implementation-type))
                                                        " "
