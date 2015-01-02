@@ -89,7 +89,9 @@
                     (make-foldable-poem-widget poem
                                                (poem-selector-poem-widget-class selector)
                                                :folded))
-                  (find-persistent-objects *store* 'poem)))
+                  (sort (find-persistent-objects *store* 'poem)
+                        #'string<=
+                        :key (lambda (poem) (poem-title poem)))))
     (setf (slot-value selector 'selection)
           tokens)))
 
