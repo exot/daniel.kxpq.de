@@ -39,7 +39,7 @@
 
 ;;; Top level start & stop scripts
 
-(defparameter *starting-time* (local-time:now))
+(defvar *starting-time* (local-time:now))
 
 (defun start-website (&rest args)
   "Starts the application by calling 'start-weblocks' with appropriate arguments."
