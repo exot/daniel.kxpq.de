@@ -163,11 +163,11 @@
                                                   (:h3 "message.log")
                                                   (:div
                                                    (str (alexandria:read-file-into-string
-                                                         #P"message.log")))
+                                                         *message-log*)))
                                                   (:h3 "access.log")
                                                   (:div
                                                    (str (alexandria:read-file-into-string
-                                                         #P"access.log"))))
+                                                         *access-log*))))
                                             (:br)
                                             (render-link (f_% (reset-sessions))
                                                          "Reset Sessions")

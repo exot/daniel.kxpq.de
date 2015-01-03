@@ -33,15 +33,24 @@
 
 ;;; Top level start & stop scripts
 
-(defvar *starting-time* (local-time:now))
+(defvar *starting-time* (local-time:now)
+  "Time when the website server had been started.")
+
+(defvar *website-dir* (asdf-system-directory :website)
+  "Directory where all the files reside that we need.")
+
+(defvar *message-log* (merge-pathnames #p"access.log" *website-dir*)
+  "File where Hunchentoot's messages go.")
+(defvar *access-log* (merge-pathnames #p"message.log" *website-dir*)
+  "File where website access is logged.")
 
 (defun start-website (&rest args)
   "Starts the application by calling 'start-weblocks' with appropriate arguments."
   (apply #'start-weblocks :port 52341 args)
   (start-webapp 'website)
   (setf *starting-time* (local-time:now))
-  (setf (hunchentoot:acceptor-access-log-destination *weblocks-server*) #p"access.log"
-        (hunchentoot:acceptor-message-log-destination *weblocks-server*) #p"message.log"))
+  (setf (hunchentoot:acceptor-access-log-destination *weblocks-server*) *access-log*
+        (hunchentoot:acceptor-message-log-destination *weblocks-server*) *message-log*))
 
 (defun stop-website ()
   "Stops the application by calling 'stop-weblocks'."
