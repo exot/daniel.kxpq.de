@@ -2,7 +2,8 @@
 
 ## About
 
-This is the source code of http://daniel.kxpq.de, written in [Weblocks](github.com/skypher/weblocks).
+This is the source code of http://daniel.kxpq.de, written in
+[Weblocks](http://github.com/skypher/weblocks).
 
 ## License
 
