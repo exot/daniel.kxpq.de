@@ -29,15 +29,15 @@
                 :type     standard-poem-widget)
    (mode :accessor mode
          :initarg  :mode
-         :type     (or :show :folded))))
+         :type     (or :show :folded)
+         :affects-dirty-status-p t)))
 
 (defmethod render-widget-body ((widget foldable-poem-widget) &key &allow-other-keys)
   (ecase (mode widget)
     (:show
      (with-html
        (:div :class "dismiss-button"
-         (render-link (f_% (setf (mode widget) :folded)
-                           (mark-dirty widget))
+         (render-link (f_% (setf (mode widget) :folded))
                       "Hide"))
        (render-widget (poem-widget widget))))
     (:folded
@@ -57,8 +57,7 @@
              " by "
              (str (poem-author poem)))
            (:div :class "show-button"
-             (render-link (f_% (setf (mode widget) :show)
-                               (mark-dirty widget))
+             (render-link (f_% (setf (mode widget) :show))
                           "Show"))))))))
 
 (defun make-foldable-poem-widget (poem poem-widget-class mode)
