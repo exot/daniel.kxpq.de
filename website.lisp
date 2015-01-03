@@ -15,12 +15,15 @@
 
 ;;;
 
+(defvar *website-dir* (asdf-system-directory :website)
+  "Directory where all the files reside that we need.")
+
 (defwebapp website
   :prefix "/"
   :name "Reaching for the Stars"
   :init-user-session 'website::init-user-session
   :ignore-default-dependencies nil
-  :public-files-path (merge-pathnames #P"./pub" (asdf-system-directory :website))
+  :public-files-path (merge-pathnames #P"./pub/" *website-dir*)
   :autostart nil
   :html-indent-p t
   :dependencies '((:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
@@ -28,16 +31,12 @@
                   (:stylesheet "http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin")))
 
 (defstore *store* :prevalence
-  (merge-pathnames (make-pathname :directory '(:relative "data"))
-                   (asdf-system-directory :website)))
+  (merge-pathnames #P"./data/" *website-dir*))
 
 ;;; Top level start & stop scripts
 
 (defvar *starting-time* (local-time:now)
   "Time when the website server had been started.")
-
-(defvar *website-dir* (asdf-system-directory :website)
-  "Directory where all the files reside that we need.")
 
 (defvar *message-log* (merge-pathnames #p"message.log" *website-dir*)
   "File where Hunchentoot's messages go.")
