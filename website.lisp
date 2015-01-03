@@ -39,9 +39,9 @@
 (defvar *website-dir* (asdf-system-directory :website)
   "Directory where all the files reside that we need.")
 
-(defvar *message-log* (merge-pathnames #p"access.log" *website-dir*)
+(defvar *message-log* (merge-pathnames #p"message.log" *website-dir*)
   "File where Hunchentoot's messages go.")
-(defvar *access-log* (merge-pathnames #p"message.log" *website-dir*)
+(defvar *access-log* (merge-pathnames #p"access.log" *website-dir*)
   "File where website access is logged.")
 
 (defun start-website (&rest args)
