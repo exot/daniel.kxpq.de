@@ -33,7 +33,8 @@
                   (:script "scriptaculous")
                   (:script "weblocks")
                   (:script "dialog")
-                  (:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")))
+                  (:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+                  (:script "mathjax")))
 
 (defstore *store* :prevalence
   (merge-pathnames #P"./data/" *website-dir*))
