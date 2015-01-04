@@ -32,6 +32,7 @@
                   (:script "prototype")
                   (:script "scriptaculous")
                   (:script "weblocks")
+                  (:script "dialog")
                   (:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")))
 
 (defstore *store* :prevalence
