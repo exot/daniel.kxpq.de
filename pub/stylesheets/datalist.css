@@ -35,16 +35,6 @@
   display: none;
 }
 
-.datalist form.datalist-sort-bar a.sort-asc:before
-{
-/* content: url(/weblocks-common/pub/images/widget/datalist/up_arrow_link.png);*/
-}
-
-.datalist form.datalist-sort-bar a.sort-desc:before
-{
-/*  content: url(/weblocks-common/pub/images/widget/datalist/down_arrow_link.png);*/
-}
-
 /* Replacing sort direction with an arrow on IE browsers */
 *:first-child+html .datalist form.datalist-sort-bar a span.direction
 {
@@ -84,41 +74,10 @@
   cursor: pointer;
 }
 
-*:first-child+html .datalist form.datalist-sort-bar a.sort-asc
-{
-/*  background: url(/weblocks-common/pub/images/widget/datalist/up_arrow_link.png) no-repeat right center;*/
-}
-
-* html .datalist form.datalist-sort-bar a.sort-asc
-{
-/*  background: url(/weblocks-common/pub/images/widget/datalist/up_arrow_link.png) no-repeat right center;*/
-}
-
-*:first-child+html .datalist form.datalist-sort-bar a.sort-desc
-{
-/*  background: url(/weblocks-common/pub/images/widget/datalist/down_arrow_link.png) no-repeat right center;*/
-}
-
-* html .datalist form.datalist-sort-bar a.sort-desc
-{
-/*  background: url(/weblocks-common/pub/images/widget/datalist/down_arrow_link.png) no-repeat right center;*/
-}
-
 .datalist form.datalist-sort-bar span.sort-asc,
 .datalist form.datalist-sort-bar span.sort-desc
 {
   cursor: default;
-}
-
-/* No Script Arrow */
-.datalist form.datalist-sort-bar span.sort-desc
-{
-/*  background: url(/weblocks-common/pub/images/widget/datalist/down_arrow.png) no-repeat right center;*/
-}
-
-.datalist form.datalist-sort-bar span.sort-asc
-{
-/*  background: url(/weblocks-common/pub/images/widget/datalist/up_arrow.png) no-repeat right center;*/
 }
 
 /* Some colors */

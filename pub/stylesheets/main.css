@@ -10,7 +10,6 @@ img
 
 .view
 {
-/*  background: #ecf8d7 url(/weblocks-common/pub/images/widget/top_background.png) repeat-x;*/
   margin-bottom: 1em;
   _height: 0; /* IE specific hasLayout fix */
 }
@@ -76,7 +75,6 @@ h2
 .view .extra-bottom-1
 {
   height: 7px;
-/*  background: url(/weblocks-common/pub/images/widget/bottom_background.png) repeat-x top;*/
   overflow: hidden;
 }
 
@@ -84,7 +82,6 @@ h2
 {
   height: 7px;
   margin-top: -7px;
-/*  background: url(/weblocks-common/pub/images/widget/bottom_left.png) no-repeat top left;*/
   overflow: hidden;
 }
 
@@ -92,7 +89,6 @@ h2
 {
   height: 7px;
   margin-top: -7px;
-/*  background: url(/weblocks-common/pub/images/widget/bottom_right.png) no-repeat top right;*/
   overflow: hidden;
 }
 
@@ -142,13 +138,11 @@ span.close-button
 
 span.close-button a
 {
-  /* background: url(/weblocks-common/pub/images/close.png) no-repeat top left; */
   padding-left: 1000em;
 }
 
 span.close-button a:hover
 {
-  /* background: url(/weblocks-common/pub/images/close_hl.png) no-repeat top left; */
 }
 
 /* Total Items */
