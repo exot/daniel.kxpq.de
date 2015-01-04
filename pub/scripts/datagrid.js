@@ -59,39 +59,3 @@ Ajax.Responders.register({
 	    initializeNavigatableRows();
 	}
 });
-
-shortcut.add("j", function() {
-	if(selectedNavigatableRowIndex == undefined) {
-	    selectedNavigatableRowIndex = 0;
-	} else {
-	    clearNavigatableHighlight();
-	    selectedNavigatableRowIndex++;
-	    if(selectedNavigatableRowIndex == navigatableTableRows.length) {
-		selectedNavigatableRowIndex = undefined;
-	    }
-	}
-	setNavigatableHighlight();
-    },
-    { 'disable_in_input' : true });
-
-shortcut.add("k", function() {
-	if(selectedNavigatableRowIndex == undefined) {
-	    selectedNavigatableRowIndex = navigatableTableRows.length - 1;
-	} else {
-	    clearNavigatableHighlight();
-	    selectedNavigatableRowIndex--;
-	    if(selectedNavigatableRowIndex == -1) {
-		selectedNavigatableRowIndex = undefined;
-	    }
-	}
-	setNavigatableHighlight();
-    },
-    { 'disable_in_input' : true })
-
-shortcut.add("Return", function() {
-	if(selectedNavigatableRowIndex != undefined) {
-	    navigatableTableRows[selectedNavigatableRowIndex].onclick();
-	}
-    },
-    { 'disable_in_input' : true })
-
