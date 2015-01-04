@@ -22,13 +22,17 @@
   :prefix "/"
   :name "Reaching for the Stars"
   :init-user-session 'website::init-user-session
-  :ignore-default-dependencies nil
   :public-files-path (merge-pathnames #P"./pub/" *website-dir*)
   :autostart nil
   :html-indent-p t
-  :dependencies '((:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
-                  (:script "mathjax")
-                  (:stylesheet "http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin")))
+  :ignore-default-dependencies t
+  :dependencies '((:stylesheet "main")
+                  (:stylesheet "layout")
+                  (:stylesheet "http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin")
+                  (:script "weblocks")
+                  (:script "prototype")
+                  (:script "scriptaculous")
+                  (:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")))
 
 (defstore *store* :prevalence
   (merge-pathnames #P"./data/" *website-dir*))
