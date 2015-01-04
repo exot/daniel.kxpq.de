@@ -30,9 +30,7 @@
                   (:stylesheet "layout")
                   (:stylesheet "http://fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin")
                   (:script "prototype")
-                  (:script "scriptaculous")
                   (:script "weblocks")
-                  (:script "dialog")
                   (:script "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
                   (:script "mathjax")))
 
