@@ -15,9 +15,7 @@
           (htm (:div :class "poem-title"
                  (str (poem-title poem)))))
         (:div :class "poem-body"
-          (str (cl-ppcre:regex-replace-all #\Newline
-                                           (poem-body poem)
-                                           "<br/>")))
+          (str (poem-body poem)))
         (:div :class "poem-author"
           (str (poem-author poem)))))))
 
